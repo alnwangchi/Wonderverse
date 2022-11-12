@@ -10,10 +10,10 @@
   <body>
     <main>
       <header>
-        <div class="h_logo_box">
+        <a href="" class="h_logo_box">
           <img src="" alt="" />
           <h2>Wonderverse</h2>
-        </div>
+        </a>
         <nav>
           <a href="">About</a>
           <a href="">Character</a>
@@ -83,12 +83,17 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script>
     $(document).ready(function () {
-      $('.hamburger').click(() => {
+      $('.hamburger').click(function () {
+        $(this).toggleClass('active');
         $('.menu').toggleClass('active');
-        $(this).toggleClass('is-active');
       });
 
       $('.go_top').click(() => $('html, body').animate({ scrollTop: 0 }, 'slow'));
+
+      // $('html, body, main').css({
+      //   overflow: 'hidden',
+      //   height: '100%',
+      // });
     });
   </script>
 </html>

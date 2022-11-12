@@ -4,6 +4,7 @@ body {
   animation: gradient 12s ease infinite;
   min-height: 200vh;
   main {
+    position: relative;
     overflow-x: hidden;
   }
 }
@@ -32,6 +33,9 @@ body {
 }
 
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -88,8 +92,6 @@ header {
       background-color: $clr_base;
       display: block;
       margin: 4px auto;
-      -webkit-transition: all 0.3s ease-in-out;
-      -o-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out;
     }
   }
@@ -126,13 +128,13 @@ header {
   }
 }
 
-.hamburger.is-active .line:nth-child(2) {
+.hamburger.active .line:nth-child(2) {
   opacity: 0;
 }
-.hamburger.is-active .line:nth-child(1) {
+.hamburger.active .line:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
-.hamburger.is-active .line:nth-child(3) {
+.hamburger.active .line:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
 

@@ -1,4 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700;900&display=swap");
+@font-face {
+  font-family: otomanopeeOne;
+  src: url(/content/assets/font/OtomanopeeOne-Regular.ttf);
+}
 html,
 body,
 div,
@@ -156,6 +161,7 @@ body {
   min-height: 200vh;
 }
 body main {
+  position: relative;
   overflow-x: hidden;
 }
 
@@ -194,6 +200,9 @@ body main {
 }
 
 header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -298,15 +307,15 @@ header .menu nav a:not(:last-of-type) {
   border-bottom: 1px solid #fff;
 }
 
-.hamburger.is-active .line:nth-child(2) {
+.hamburger.active .line:nth-child(2) {
   opacity: 0;
 }
 
-.hamburger.is-active .line:nth-child(1) {
+.hamburger.active .line:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
 
-.hamburger.is-active .line:nth-child(3) {
+.hamburger.active .line:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
 
