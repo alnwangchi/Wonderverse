@@ -1,0 +1,239 @@
+body {
+  background: linear-gradient(94.56deg, $clr_2 0.6%, $clr_3 62.83%, $clr_1 93.22%);
+  background-size: 200% 200%;
+  animation: gradient 12s ease infinite;
+  min-height: 200vh;
+  main {
+    overflow-x: hidden;
+  }
+}
+
+* {
+  color: $clr_base;
+  transition: 0.4s;
+  box-sizing: border-box;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  @include md {
+    padding: 15px 10%;
+  }
+  .h_logo_box {
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    h2 {
+      font-size: $fs_h2;
+      font-weight: $fw_bolder;
+      @include lg {
+        font-size: $fs_h4;
+      }
+      // 用在首頁 logo
+      &.gradient {
+        background: linear-gradient(92.09deg, $clr_5 0.54%, $clr_1 43.02%, $clr_4 101.24%);
+        background-clip: text;
+        color: transparent;
+      }
+    }
+  }
+  & > nav {
+    width: 65%;
+    max-width: 860px;
+    display: flex;
+    justify-content: space-between;
+    @include lg {
+      display: none;
+    }
+    a {
+      font-size: $fs_h6;
+      font-weight: $fw_bolder;
+      &:hover {
+        color: $clr_1;
+      }
+    }
+  }
+  .hamburger {
+    display: none;
+    @include lg {
+      display: block;
+      cursor: pointer;
+      z-index: 2;
+    }
+    .line {
+      width: 25px;
+      height: 3px;
+      border-radius: 999rem;
+      background-color: $clr_base;
+      display: block;
+      margin: 4px auto;
+      -webkit-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  .menu {
+    display: none;
+    @include lg {
+      display: block;
+      position: fixed;
+      width: 100%;
+      top: -100%;
+      left: 0;
+      padding: 65px 20px 10px;
+      background: rgba($clr_000, 0.8);
+      z-index: 1;
+      transition: -0.3s 0.9s ease-in-out;
+    }
+    @include md {
+      padding-top: 55px;
+    }
+    &.active {
+      top: 0;
+    }
+    nav {
+      display: flex;
+      flex-direction: column;
+      a {
+        padding: 10px 0;
+        text-align: center;
+        &:not(:last-of-type) {
+          border-bottom: 1px solid $clr_base;
+        }
+      }
+    }
+  }
+}
+
+.hamburger.is-active .line:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.is-active .line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.is-active .line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+footer {
+  background: linear-gradient(92.81deg, $clr_2 0%, $clr_4 47.4%, $clr_1 100%);
+  .container {
+    position: relative;
+    padding: 44px 0 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include md {
+      padding: 44px 10% 8px;
+    }
+    nav,
+    .f_other_box {
+      display: flex;
+      justify-content: center;
+      gap: 19px;
+      flex-wrap: wrap;
+      a {
+        position: relative;
+        font-weight: $fw_bold;
+        &:not(:last-child) {
+          &::after {
+            content: '';
+            position: absolute;
+            right: -9px;
+            height: 100%;
+            width: 1px;
+            background-color: $clr_base;
+          }
+        }
+      }
+    }
+    nav {
+      margin-bottom: 22px;
+      @include md {
+        gap: 4px 19px;
+      }
+    }
+    .f_other_box {
+      margin-bottom: 37px;
+      @include lg {
+        margin-bottom: 21px;
+      }
+    }
+    .f_other_box2 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      font-weight: $fw_bold;
+      margin-bottom: 24px;
+      @include sm {
+        flex-direction: column;
+        gap: 5px;
+      }
+    }
+    .copyright {
+      font-size: $fs_milli;
+    }
+    .download {
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 21px;
+      @include xl {
+        top: 60%;
+      }
+      @include lg {
+        position: relative;
+        top: unset;
+        left: unset;
+        transform: unset;
+        margin-bottom: 22px;
+      }
+      a {
+        display: block;
+      }
+    }
+    .go_top {
+      position: absolute;
+      top: -68px;
+      right: 5%;
+      width: 136px;
+      height: 136px;
+      border-radius: 999rem;
+      background: $clr_000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      @include sm {
+        top: -44px;
+        width: 88px;
+        height: 88px;
+      }
+    }
+  }
+}

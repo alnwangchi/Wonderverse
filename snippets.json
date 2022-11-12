@@ -1,0 +1,37 @@
+{
+  "breakpoint-xxl": {
+    "prefix": "xxl",
+    "body": ["@include xxl {", "  ${1}", "}"],
+    "description": "breakpoint-xxl"
+  },
+  "breakpoint-xl": {
+    "prefix": "xl",
+    "body": ["@include xl {", "  ${1}", "}"],
+    "description": "breakpoint-xl"
+  },
+  "breakpoint-lg": {
+    "prefix": "lg",
+    "body": ["@include lg {", "  ${1}", "}"],
+    "description": "breakpoint-lg"
+  },
+  "breakpoint-md": {
+    "prefix": "md",
+    "body": ["@include md {", "  ${1}", "}"],
+    "description": "breakpoint-md"
+  },
+  "breakpoint-sm": {
+    "prefix": "sm",
+    "body": ["@include sm {", "  ${1}", "}"],
+    "description": "breakpoint-sm"
+  },
+  "breakpoint-xs": {
+    "prefix": "xs",
+    "body": ["@include xs {", "  ${1}", "}"],
+    "description": "breakpoint-xs"
+  },
+  "breakpoint-xxs": {
+    "prefix": "xxs",
+    "body": ["@include xxs {", "  ${1}", "}"],
+    "description": "breakpoint-xxs"
+  }
+}

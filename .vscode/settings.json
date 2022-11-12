@@ -4,6 +4,11 @@
       "format": "compressed",
       "extensionName": ".min.css",
       "savePath": "~/../css"
+    },
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "~/../css"
     }
   ],
   "liveSassCompile.settings.generateMap": false
