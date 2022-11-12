@@ -4,7 +4,11 @@ RWD 切版加上一些功能及動效的網站
 
 ## 開發方式
 
-無框架各個頁面皆為 HTML CSS JS 組成，共用寫在 common 各自頁用寫在 pages，其他 utils 遇到需要再補一補，最後統一編譯成一支共用 all.css
+無框架各個頁面皆為 HTML CSS JS 組成
+
+CSS : 共用寫在 common 各自頁用寫在 pages，其他 utils 遇到需要再補一補，最後統一編譯成一支共用 all.css
+
+JS : 共用的寫在 common.js 統一引入，其他各頁就直接寫底下吧
 
 基本畫面共用的部分我切好了，基本上只需要在中間的 section 裡面切各頁面不同的版即可
 
