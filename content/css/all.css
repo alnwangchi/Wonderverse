@@ -554,3 +554,39 @@ section.avatar .content:nth-child(even) {
     flex-direction: column;
   }
 }
+
+section.download {
+  padding: 38px 15% 166px;
+}
+@media (max-width: 767.98px) {
+  section.download {
+    padding: 38px 6.25% 166px;
+  }
+}
+section.download .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 7.5vw;
+}
+@media (max-width: 767.98px) {
+  section.download .container {
+    flex-direction: column;
+  }
+}
+section.download .container .gif {
+  width: 314px;
+  aspect-ratio: 9/16;
+  background-color: #ccc;
+}
+section.download .container .info h3 {
+  white-space: nowrap;
+}
+section.download .container .info p {
+  margin-bottom: 40px;
+  max-width: 530px;
+}
+section.download .container .info .links {
+  display: flex;
+  gap: 16px;
+}
