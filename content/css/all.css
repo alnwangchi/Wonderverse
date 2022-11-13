@@ -158,11 +158,33 @@ body {
   background-size: 200% 200%;
   -webkit-animation: gradient 12s ease infinite;
           animation: gradient 12s ease infinite;
-  min-height: 200vh;
+  min-height: 100vh;
 }
 body main {
   position: relative;
   overflow-x: hidden;
+  padding-top: 80px;
+}
+body main.index {
+  padding-top: unset;
+}
+@media (max-width: 767.98px) {
+  body main {
+    padding-top: 65px;
+  }
+}
+body main h3 {
+  font-size: clamp(1.5rem, 4vw, 3.375rem);
+  font-family: "otomanopeeOne", "Noto Sans TC";
+  line-height: 1.25;
+  margin-bottom: 24px;
+}
+body main p {
+  max-width: 470px;
+  font-size: 1.125rem;
+  font-family: "Nunito", "Noto Sans TC";
+  font-weight: 500;
+  line-height: 1.35;
 }
 
 * {
@@ -209,9 +231,14 @@ header {
   align-items: center;
   padding: 20px 80px;
 }
+@media (max-width: 1199.98px) {
+  header {
+    padding: 20px 6.25%;
+  }
+}
 @media (max-width: 767.98px) {
   header {
-    padding: 15px 10%;
+    padding: 15px 6.25%;
   }
 }
 header .h_logo_box {
@@ -432,5 +459,56 @@ footer .container .go_top {
     top: -44px;
     width: 88px;
     height: 88px;
+  }
+}
+
+section.social .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px 6.25%;
+}
+@media (max-width: 767.98px) {
+  section.social .content {
+    flex-direction: column;
+    padding: 40px 6.25%;
+  }
+}
+section.social .content .video_box {
+  width: 100%;
+  max-width: 640px;
+  aspect-ratio: 16/9;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-right: 16px;
+}
+@media (max-width: 767.98px) {
+  section.social .content .video_box {
+    margin: unset;
+    margin-bottom: 16px;
+  }
+}
+section.social .content .video_box iframe {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section.social .content:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+@media (max-width: 767.98px) {
+  section.social .content:nth-child(odd) {
+    flex-direction: column;
+  }
+}
+section.social .content:nth-child(odd) .video_box {
+  margin-right: unset;
+  margin-left: 16px;
+}
+@media (max-width: 767.98px) {
+  section.social .content:nth-child(odd) .video_box {
+    margin: unset;
+    margin-bottom: 16px;
   }
 }

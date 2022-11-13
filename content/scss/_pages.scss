@@ -1,0 +1,46 @@
+section {
+}
+
+section.social {
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 6.25%;
+    @include md {
+      flex-direction: column;
+      padding: 40px 6.25%;
+    }
+    .video_box {
+      width: 100%;
+      max-width: 640px;
+      aspect-ratio: 16 / 9;
+      border-radius: 15px;
+      overflow: hidden;
+      margin-right: 16px;
+      @include md {
+        margin: unset;
+        margin-bottom: 16px;
+      }
+      iframe {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &:nth-child(odd) {
+      flex-direction: row-reverse;
+      @include md {
+        flex-direction: column;
+      }
+      .video_box {
+        margin-right: unset;
+        margin-left: 16px;
+        @include md {
+          margin: unset;
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+}

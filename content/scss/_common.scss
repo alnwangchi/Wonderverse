@@ -1,11 +1,32 @@
+// custom reset
 body {
   background: linear-gradient(94.56deg, $clr_2 0.6%, $clr_3 62.83%, $clr_1 93.22%);
   background-size: 200% 200%;
   animation: gradient 12s ease infinite;
-  min-height: 200vh;
+  min-height: 100vh;
   main {
     position: relative;
     overflow-x: hidden;
+    padding-top: 80px;
+    &.index {
+      padding-top: unset;
+    }
+    @include md {
+      padding-top: 65px;
+    }
+    h3 {
+      font-size: clamp($fs_h4, 4vw, $fs_mega);
+      font-family: $ff_alt1;
+      line-height: 1.25;
+      margin-bottom: 24px;
+    }
+    p {
+      max-width: 470px;
+      font-size: $fs_h6;
+      font-family: $ff_base;
+      font-weight: $fw_bold;
+      line-height: 1.35;
+    }
   }
 }
 
@@ -41,8 +62,11 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px 80px;
+  @include xl {
+    padding: 20px 6.25%;
+  }
   @include md {
-    padding: 15px 10%;
+    padding: 15px 6.25%;
   }
   .h_logo_box {
     display: flex;
