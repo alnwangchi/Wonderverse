@@ -44,3 +44,38 @@ section.social {
     }
   }
 }
+
+section.avatar {
+  padding-bottom: 25vh;
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10%;
+    padding: 35px 15%;
+    @include md {
+      flex-direction: column;
+      padding: 35px 6.25%;
+    }
+    .gif {
+      width: 314px;
+      aspect-ratio: 9 / 16;
+      background-color: #ccc;
+      flex-shrink: 0;
+      @include md {
+        width: 100%;
+        margin-bottom: 16px;
+      }
+    }
+    p {
+      width: 100%;
+      max-width: 530px;
+    }
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+      @include md {
+        flex-direction: column;
+      }
+    }
+  }
+}

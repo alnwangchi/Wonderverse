@@ -230,6 +230,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px 80px;
+  z-index: 2;
 }
 @media (max-width: 1199.98px) {
   header {
@@ -510,5 +511,46 @@ section.social .content:nth-child(odd) .video_box {
   section.social .content:nth-child(odd) .video_box {
     margin: unset;
     margin-bottom: 16px;
+  }
+}
+
+section.avatar {
+  padding-bottom: 25vh;
+}
+section.avatar .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10%;
+  padding: 35px 15%;
+}
+@media (max-width: 767.98px) {
+  section.avatar .content {
+    flex-direction: column;
+    padding: 35px 6.25%;
+  }
+}
+section.avatar .content .gif {
+  width: 314px;
+  aspect-ratio: 9/16;
+  background-color: #ccc;
+  flex-shrink: 0;
+}
+@media (max-width: 767.98px) {
+  section.avatar .content .gif {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+}
+section.avatar .content p {
+  width: 100%;
+  max-width: 530px;
+}
+section.avatar .content:nth-child(even) {
+  flex-direction: row-reverse;
+}
+@media (max-width: 767.98px) {
+  section.avatar .content:nth-child(even) {
+    flex-direction: column;
   }
 }
