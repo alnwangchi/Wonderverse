@@ -109,3 +109,23 @@ section.download {
     }
   }
 }
+
+section.privacy {
+  padding: 46px 15% 93px;
+  @include md {
+    padding: 46px 6.25% 93px;
+  }
+  .container {
+    h3 {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .content {
+      width: 100%;
+      min-height: 800px;
+      border-radius: 20px;
+      padding: 24px;
+      background-color: rgba($clr_base, 0.5);
+    }
+  }
+}
