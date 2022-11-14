@@ -12,7 +12,7 @@ body {
       padding-top: unset;
     }
     @include md {
-      padding-top: 65px;
+      padding-top: 55px;
     }
     h3 {
       font-size: clamp($fs_h4, 4vw, $fs_mega);
@@ -54,7 +54,7 @@ body {
 }
 
 header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;

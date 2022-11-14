@@ -170,7 +170,7 @@ body main.index {
 }
 @media (max-width: 767.98px) {
   body main {
-    padding-top: 65px;
+    padding-top: 55px;
   }
 }
 body main h3 {
@@ -222,7 +222,7 @@ body main p {
 }
 
 header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -463,6 +463,22 @@ footer .container .go_top {
   }
 }
 
+section {
+  padding-top: 0;
+}
+
+section.index .container .video_box {
+  width: 100%;
+  aspect-ratio: 2/1;
+  overflow: hidden;
+}
+section.index .container .video_box iframe {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 section.social .content {
   display: flex;
   justify-content: space-between;
@@ -589,6 +605,51 @@ section.download .container .info p {
 section.download .container .info .links {
   display: flex;
   gap: 16px;
+}
+
+@media (max-width: 767.98px) {
+  section:is(.vision, .arlive) .container {
+    padding: 0 6.25%;
+  }
+}
+section:is(.vision, .arlive) .container h2 {
+  font-size: clamp(60px, 9vw, 128px);
+  font-weight: 900;
+}
+section:is(.vision, .arlive) .container h2:first-of-type {
+  color: #d9d9d9;
+  opacity: 0.25;
+  filter: blur(5px);
+}
+section:is(.vision, .arlive) .container h2:not(:first-of-type) {
+  position: relative;
+  top: -15vh;
+  text-align: end;
+  line-height: 1.25;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.7) 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
+@media (max-width: 767.98px) {
+  section:is(.vision, .arlive) .container h2:not(:first-of-type) {
+    top: -10vh;
+  }
+}
+section:is(.vision, .arlive) .container .video_box {
+  transform: translateY(-3vh);
+  width: 100%;
+  max-width: 1080px;
+  aspect-ratio: 16/9;
+  border-radius: 15px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+section:is(.vision, .arlive) .container .video_box iframe {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 section.privacy {

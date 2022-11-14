@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vision</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="./content/css/all.min.css" />
   </head>
   <body>
@@ -15,7 +16,7 @@
           <h2>Wonderverse</h2>
         </a>
         <nav>
-          <a href="about.html">About</a>
+          <a href="index.html">About</a>
           <a href="character.html">Character</a>
           <a href="companion.html">Companion</a>
           <a href="social.html">Social</a>
@@ -31,7 +32,7 @@
         </div>
         <div class="menu">
           <nav>
-            <a href="about.html">About</a>
+            <a href="index.html">About</a>
             <a href="character.html">Character</a>
             <a href="companion.html">Companion</a>
             <a href="social.html">Social</a>
@@ -42,7 +43,21 @@
           </nav>
         </div>
       </header>
-      <section style="height: 140vh"></section>
+      <section class="vision">
+        <div class="container">
+          <h2>Vision</h2>
+          <div class="video_box">
+            <iframe
+              src="https://www.youtube.com/embed/zfqiLSjxJ14?controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <h2 data-aos="fade-left">Vision</h2>
+        </div>
+      </section>
       <footer>
         <div class="container">
           <div class="download">
@@ -54,7 +69,7 @@
             </a>
           </div>
           <nav>
-            <a href="about.html">About</a>
+            <a href="index.html">About</a>
             <a href="character.html">Character</a>
             <a href="companion.html">Companion</a>
             <a href="social.html">Social</a>
@@ -81,5 +96,9 @@
     </main>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="/content/js/common.js"></script>
+  <script>
+    AOS.init({ duration: 1200, once: true });
+  </script>
 </html>
