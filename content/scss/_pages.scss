@@ -4,16 +4,101 @@ section {
 }
 
 section.index {
-  .container {
-    .video_box {
-      width: 100%;
-      aspect-ratio: 2 / 1;
-      overflow: hidden;
-      iframe {
-        @include iframeSize;
+  & > .video_box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    overflow: hidden;
+    & > iframe {
+      @include iframeSize;
+    }
+    // 最下方兩部影片重疊處
+    &.breakdown {
+      margin-top: 85vh;
+      margin-bottom: 60vh;
+      overflow: unset;
+      $commonleft: 37.5%;
+      div {
+        iframe {
+          position: absolute;
+          top: 50%;
+          left: 10%;
+          transform: translateY(-50%);
+          border: 1px solid #f00;
+          @include occupation;
+        }
+      }
+      h2 {
+        position: absolute;
+        top: -7.5vh;
+        left: $commonleft;
+        span {
+          font-size: clamp($fs_h4, 3.5vw, $fs_mega);
+        }
+      }
+      p {
+        position: absolute;
+        bottom: 7.5vh;
+        left: $commonleft;
+        font-size: $fs_h3;
+        min-width: 840px;
       }
     }
-    // Hey U Molly wtite here
+  }
+  // Hey U Molly wtite here
+
+  .container {
+    .download {
+      padding: 70px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      @include md {
+        flex-direction: column;
+      }
+    }
+    .vc_box {
+      position: relative;
+      img {
+        width: 100%;
+      }
+      .text_box {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+      }
+    }
+    .content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 15vh 0;
+      @include md {
+        flex-direction: column;
+      }
+      .video_box {
+        width: 100%;
+        max-width: 640px;
+        aspect-ratio: 16 / 9;
+        border-radius: 15px;
+        overflow: hidden;
+        margin-right: 48px;
+        @include md {
+          margin: unset;
+          margin-bottom: 16px;
+        }
+        iframe {
+          @include iframeSize;
+        }
+      }
+    }
+  }
+  .breakdown {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: flex;
   }
 }
 

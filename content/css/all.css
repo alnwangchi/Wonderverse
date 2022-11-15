@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;700;900&display=swap");
 @font-face {
   font-family: otomanopeeOne;
-  src: url(/content/assets/font/OtomanopeeOne-Regular.ttf);
+  src: url(./../assets/font/OtomanopeeOne-Regular.ttf);
 }
 html,
 body,
@@ -153,6 +153,10 @@ button {
   cursor: pointer;
 }
 
+.removeWhiteBackground {
+  mix-blend-mode: multiply;
+}
+
 body {
   background: linear-gradient(94.56deg, #c67edf 0.6%, #897ef9 62.83%, #54b8c6 93.22%);
   background-size: 200% 200%;
@@ -173,11 +177,23 @@ body main.index {
     padding-top: 55px;
   }
 }
+body main h2 {
+  font-size: clamp(2rem, 6vw, 6rem);
+  font-family: "otomanopeeOne", "Noto Sans TC";
+}
 body main h3 {
-  font-size: clamp(1.5rem, 4vw, 3.375rem);
+  font-size: clamp(2rem, 4vw, 3.375rem);
   font-family: "otomanopeeOne", "Noto Sans TC";
   line-height: 1.25;
   margin-bottom: 24px;
+}
+body main h4 {
+  font-size: clamp(2rem, 3vw, 3.375rem);
+  font-family: "otomanopeeOne", "Noto Sans TC";
+  line-height: 1.5;
+  text-align: center;
+  max-width: 680px;
+  margin: 30vh auto;
 }
 body main p {
   max-width: 470px;
@@ -219,6 +235,11 @@ body main p {
 .container {
   max-width: 1300px;
   margin: 0 auto;
+}
+@media (max-width: 1199.98px) {
+  .container {
+    padding: 0 6.25%;
+  }
 }
 
 header {
@@ -335,16 +356,16 @@ header .menu nav a:not(:last-of-type) {
   border-bottom: 1px solid #fff;
 }
 
-.hamburger.active .line:nth-child(2) {
-  opacity: 0;
-}
-
 .hamburger.active .line:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+  width: 15px;
 }
 
-.hamburger.active .line:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+.hamburger.active .line:nth-child(2) {
+  width: 20px;
+}
+
+.hamburger.active .line {
+  transform: rotate(-30deg);
 }
 
 footer {
@@ -467,16 +488,107 @@ section {
   padding-top: 0;
 }
 
-section.index .container .video_box {
+section.index > .video_box {
+  position: relative;
   width: 100%;
   aspect-ratio: 2/1;
   overflow: hidden;
 }
-section.index .container .video_box iframe {
+section.index > .video_box > iframe {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+section.index > .video_box.breakdown {
+  margin-top: 85vh;
+  margin-bottom: 60vh;
+  overflow: unset;
+}
+section.index > .video_box.breakdown div iframe {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  border: 1px solid #f00;
+  width: 314px;
+  aspect-ratio: 9/16;
+  background-color: #ccc;
+}
+section.index > .video_box.breakdown h2 {
+  position: absolute;
+  top: -7.5vh;
+  left: 37.5%;
+}
+section.index > .video_box.breakdown h2 span {
+  font-size: clamp(1.5rem, 3.5vw, 3.375rem);
+}
+section.index > .video_box.breakdown p {
+  position: absolute;
+  bottom: 7.5vh;
+  left: 37.5%;
+  font-size: 2rem;
+  min-width: 840px;
+}
+section.index .container .download {
+  padding: 70px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+@media (max-width: 767.98px) {
+  section.index .container .download {
+    flex-direction: column;
+  }
+}
+section.index .container .vc_box {
+  position: relative;
+}
+section.index .container .vc_box img {
+  width: 100%;
+}
+section.index .container .vc_box .text_box {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+section.index .container .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15vh 0;
+}
+@media (max-width: 767.98px) {
+  section.index .container .content {
+    flex-direction: column;
+  }
+}
+section.index .container .content .video_box {
+  width: 100%;
+  max-width: 640px;
+  aspect-ratio: 16/9;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-right: 48px;
+}
+@media (max-width: 767.98px) {
+  section.index .container .content .video_box {
+    margin: unset;
+    margin-bottom: 16px;
+  }
+}
+section.index .container .content .video_box iframe {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+section.index .breakdown {
+  width: 100%;
+  aspect-ratio: 16/9;
+  display: flex;
 }
 
 section.social .content {

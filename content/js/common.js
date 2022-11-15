@@ -4,5 +4,5 @@ $(document).ready(function () {
     $('.menu').toggleClass('active');
   });
 
-  $('.go_top').click(() => $('html, body').animate({ scrollTop: 0 }, 'slow'));
+  $('.go_top').click(() => window.scrollTo({ top: 0, behavior: 'smooth' }));
 });

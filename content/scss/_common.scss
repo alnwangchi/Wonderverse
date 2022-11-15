@@ -14,11 +14,23 @@ body {
     @include md {
       padding-top: 55px;
     }
+    h2 {
+      font-size: clamp($fs_h3, 6vw, $fs_giga);
+      font-family: $ff_alt1;
+    }
     h3 {
-      font-size: clamp($fs_h4, 4vw, $fs_mega);
+      font-size: clamp($fs_h3, 4vw, $fs_mega);
       font-family: $ff_alt1;
       line-height: 1.25;
       margin-bottom: 24px;
+    }
+    h4 {
+      font-size: clamp($fs_h3, 3vw, $fs_mega);
+      font-family: $ff_alt1;
+      line-height: 1.5;
+      text-align: center;
+      max-width: 680px;
+      margin: 30vh auto;
     }
     p {
       max-width: 470px;
@@ -51,6 +63,9 @@ body {
 .container {
   max-width: 1300px;
   margin: 0 auto;
+  @include xl {
+    padding: 0 6.25%;
+  }
 }
 
 header {
@@ -153,15 +168,27 @@ header {
   }
 }
 
-.hamburger.active .line:nth-child(2) {
-  opacity: 0;
-}
 .hamburger.active .line:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+  width: 15px;
 }
-.hamburger.active .line:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+
+.hamburger.active .line:nth-child(2) {
+  width: 20px;
 }
+
+.hamburger.active .line {
+  transform: rotate(-30deg);
+}
+
+// .hamburger.active .line:nth-child(2) {
+//   opacity: 0;
+// }
+// .hamburger.active .line:nth-child(1) {
+//   transform: translateY(7px) rotate(45deg);
+// }
+// .hamburger.active .line:nth-child(3) {
+//   transform: translateY(-7px) rotate(-45deg);
+// }
 
 footer {
   background: linear-gradient(92.81deg, $clr_2 0%, $clr_4 47.4%, $clr_1 100%);

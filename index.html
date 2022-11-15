@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Index</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="./content/css/all.min.css" />
   </head>
   <body>
@@ -43,8 +44,73 @@
         </div>
       </header>
       <section class="index">
+        <div class="video_box">
+          <iframe
+            src="https://www.youtube.com/embed/uYLyTyUajrU?controls=0"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
         <div class="container">
-          <div class="video_box">
+          <div class="download">
+            <a href="">
+              <img src="./content/assets/img/ios.png" alt="" />
+            </a>
+            <a href="">
+              <img src="./content/assets/img/androi.png" alt="" />
+            </a>
+          </div>
+          <h4 data-aos="fade-down">
+            Wonderverse is the world’s first all-in-one mobile platform where userscan live
+            alongside their favorite virtual companions.
+          </h4>
+          <div class="vc_box">
+            <img class="removeWhiteBackground" src="./content/assets/img/tmp.webp" alt="" />
+            <div class="text_box" data-aos="fade-down">
+              <h3>
+                Virtual <br />
+                Companion
+              </h3>
+              <p>
+                Is your personal assistant, nutritionist, caretaker, and friend! Always by your side
+                24/7
+              </p>
+            </div>
+          </div>
+          <div class="content">
+            <div class="video_box">
+              <iframe
+                src="https://www.youtube.com/embed/3iK43nEhbAY"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="text_box" data-aos="fade-down">
+              <h3>
+                MR Social <br />
+                Experiences
+              </h3>
+              <p>
+                MR Social Experiences – Experience the new era of social messaging. Let your virtual
+                companion visit your friends IRL! Trying to get someone’s attention? Forget sending
+                boring messages, gifs or memes.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="video_box breakdown">
+          <iframe
+            src="https://www.youtube.com/embed/uYLyTyUajrU?controls=0"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+          <div>
             <iframe
               src="https://www.youtube.com/embed/uYLyTyUajrU?controls=0"
               title="YouTube video player"
@@ -53,16 +119,21 @@
               allowfullscreen
             ></iframe>
           </div>
+          <h2>Breakdown <br /><span> the boundaries of <br / >reality.</span></h2>
+          <p>
+            Join and interact face-to-face with virtual companions in real-time at events, from
+            anywhere around the world.
+          </p>
         </div>
       </section>
       <footer>
         <div class="container">
           <div class="download">
             <a href="">
-              <img src="/content/assets/img/ios.png" alt="" />
+              <img src="./content/assets/img/ios.png" alt="" />
             </a>
             <a href="">
-              <img src="/content/assets/img/androi.png" alt="" />
+              <img src="./content/assets/img/androi.png" alt="" />
             </a>
           </div>
           <nav>
@@ -81,7 +152,7 @@
           </div>
           <div class="f_other_box2">
             <p>Operating Company</p>
-            <img src="/content/assets/img/footer_logo.svg" alt="" />
+            <img src="./content/assets/img/footer_logo.svg" alt="" />
           </div>
           <p class="copyright">© 2022 Wonders.ai Corp.</p>
           <button class="go_top">
@@ -92,6 +163,14 @@
       </footer>
     </main>
   </body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.slim.min.js"
+    integrity="sha512-yBpuflZmP5lwMzZ03hiCLzA94N0K2vgBtJgqQ2E1meJzmIBfjbb7k4Y23k2i2c/rIeSUGc7jojyIY5waK3ZxCQ=="
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="/content/js/common.js"></script>
+  <script>
+    AOS.init({ duration: 1200, once: true });
+  </script>
 </html>
