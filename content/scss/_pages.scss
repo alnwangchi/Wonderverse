@@ -285,22 +285,22 @@ section.companion {
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
-    @include lg {
-      max-width: 625px;
-      .showIcon {
-        display: none;
-      }
-      @include xxs {
-        width: 340px;
-        flex-wrap: wrap;
-        padding: 2px, 20px, 2px, 20px;
-      }
-    }
-    width: 830px;
+    max-width: 830px;
     padding: 2px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 100px;
     background-color: $clr_base;
+    @include lg {
+      max-width: 625px;
+      img {
+        display: none;
+      }
+      @include sm {
+        max-width: 340px;
+        flex-wrap: wrap;
+        padding: 2px 20px 2px 20px;
+      }
+    }
     &-btn {
       font-size: $fs_h6;
       line-height: $fs_h4;
@@ -323,56 +323,56 @@ section.companion {
       }
     }
   }
-  .polygon {
-    position: absolute;
-    width: 20%;
-  }
-  .left_polygon {
-    opacity: 0.5;
-    top: 43%;
-    left: 0%;
-  }
-  .group_polygon {
-    opacity: 0.37;
-    left: 0%;
-    bottom: 0%;
-  }
-  .right_polygon {
-    opacity: 0.5;
-    top: 48%;
-    right: 0%;
-  }
-  .center_polygon {
-    opacity: 0.5;
-    top: 63%;
-    right: 5%;
-  }
+
   .content {
     display: none;
+    padding: 81px 0px 50%;
     &-title {
-      padding-top: 81px;
       font-size: $fs_mega;
     }
-    .iframe {
-      width: 522px;
-      height: 366px;
-      @include lg {
-        width: 625px;
-        @include xxs {
-          width: 340px;
-        }
+    .video_box {
+      max-width: 522px;
+      width: 100%;
+      aspect-ratio: 16/9;
+      margin: 0 auto;
+      iframe {
+        @include iframeSize;
       }
     }
     p {
       padding-top: 73px;
       padding-bottom: 80px;
       max-width: 1080px;
-      font-size: 18px;
+      font-size: $fs_h5;
       font-weight: $fw_bolder;
     }
   }
   .content.active {
     display: block;
     text-align: center;
+  }
+  .polygon {
+    position: absolute;
+    width: 20%;
+    &_left {
+      opacity: 0.5;
+      top: 43%;
+      left: 0%;
+    }
+    &_group {
+      opacity: 0.37;
+      left: 0%;
+      bottom: 0%;
+    }
+    &_right {
+      opacity: 0.5;
+      top: 48%;
+      right: 0%;
+    }
+    &_center {
+      opacity: 0.5;
+      top: 63%;
+      right: 5%;
+    }
   }
 }
