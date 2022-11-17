@@ -69,7 +69,7 @@
           </h4>
           <div class="vc_box">
             <img class="removeWhiteBackground" src="./content/assets/img/tmp.webp" alt="" />
-            <div class="text_box" data-aos="fade-down">
+            <div class="text_box" data-aos="fade-left">
               <h3>
                 Virtual <br />
                 Companion
@@ -163,17 +163,38 @@
         </div>
       </footer>
     </main>
+    <div class="fixed_news">
+      <div class="paper">
+        <button class="btn_close">
+          <img src="./content/assets/img/fixed_news_close.svg" alt="close" />
+        </button>
+        <h3>NEWS!</h3>
+        <p>2022.10.21</p>
+        <p>
+          Chat with your virtual companion, dress them up or listen to music together. With every
+          interaction, they learn...
+        </p>
+        <div class="links">
+          <a href="" target="_blank" rel="noreferrer noopener">
+            <img src="./content//assets/img/icons_twitter.svg" alt="Twitter" />
+            Twitter</a
+          >
+          <a href="" target="_blank" rel="noreferrer noopener">
+            <img src="./content/assets/img/icons_discord.svg" alt="Discord" />
+            Discord</a
+          >
+        </div>
+      </div>
+    </div>
   </body>
-  <!-- <script
-    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.slim.min.js"
-    integrity="sha512-yBpuflZmP5lwMzZ03hiCLzA94N0K2vgBtJgqQ2E1meJzmIBfjbb7k4Y23k2i2c/rIeSUGc7jojyIY5waK3ZxCQ=="
-    crossorigin="anonymous"
-  ></script> -->
   <script src="./content/js/jq.js"></script>
   <script src="./content/js/aos.js"></script>
-  <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script> -->
   <script src="./content/js/common.js"></script>
   <script>
     AOS.init({ duration: 1200, once: true });
+
+    $('.btn_close').on('click', function () {
+      $(this).parents('.fixed_news').remove();
+    });
   </script>
 </html>

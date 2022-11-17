@@ -150,7 +150,10 @@ img {
 button {
   outline: none;
   border: none;
-  cursor: pointer;
+}
+
+a {
+  cursor: inherit;
 }
 
 .removeWhiteBackground {
@@ -160,9 +163,11 @@ button {
 body {
   background: linear-gradient(94.56deg, #c67edf 0.6%, #897ef9 62.83%, #54b8c6 93.22%);
   background-size: 200% 200%;
-  animation: gradient 12s ease infinite;
+  -webkit-animation: gradient 12s ease infinite;
+          animation: gradient 12s ease infinite;
   min-height: 100vh;
-  cursor: url("/content/assets/img/logo.svg"), auto;
+  overflow-x: hidden;
+  cursor: url("../assets/img/logo.svg"), auto;
 }
 body main {
   position: relative;
@@ -202,11 +207,73 @@ body main p {
   font-weight: 500;
   line-height: 1.35;
 }
+body .fixed_news {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 230px;
+  height: 336px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #3b2b80 0%, #9747ff 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .fixed_news .paper {
+  position: relative;
+  width: 206px;
+  height: 310px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  padding: 12px 8px;
+}
+body .fixed_news .paper h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+body .fixed_news .paper p {
+  line-height: 1.25;
+  font-size: 1.125rem;
+  margin-bottom: 12px;
+}
+body .fixed_news .paper .links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  border: 2px solid #fff;
+  border-radius: 999rem;
+  padding: 10px;
+}
+body .fixed_news .paper .links a:first-child {
+  margin-bottom: 8px;
+}
+body .fixed_news .paper .btn_close {
+  position: absolute;
+  top: 12px;
+  right: 8px;
+  background-color: transparent;
+}
 
 * {
   color: #fff;
   transition: 0.4s;
   box-sizing: border-box;
+}
+
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 @keyframes gradient {
@@ -259,6 +326,7 @@ header .h_logo_box {
 header .h_logo_box h2 {
   font-size: 2.5rem;
   font-weight: 700;
+  font-family: "Nunito", "Noto Sans TC";
 }
 @media (max-width: 991.98px) {
   header .h_logo_box h2 {
@@ -267,7 +335,8 @@ header .h_logo_box h2 {
 }
 header .h_logo_box h2.gradient {
   background: linear-gradient(92.09deg, #c453ec 0.54%, #54b8c6 43.02%, #7172c8 101.24%);
-  background-clip: text;
+  -webkit-background-clip: text;
+          background-clip: text;
   color: transparent;
 }
 header > nav {
@@ -294,7 +363,6 @@ header .hamburger {
 @media (max-width: 991.98px) {
   header .hamburger {
     display: block;
-    cursor: pointer;
     z-index: 2;
   }
 }
@@ -481,10 +549,21 @@ section.index > .video_box {
   aspect-ratio: 2/1;
   overflow: hidden;
 }
+@media (max-width: 767.98px) {
+  section.index > .video_box {
+    aspect-ratio: 1.2/1;
+  }
+}
+@media (max-width: 575.98px) {
+  section.index > .video_box {
+    aspect-ratio: 0.6/1;
+  }
+}
 section.index > .video_box > iframe {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 section.index > .video_box.breakdown {
   margin-top: 85vh;
@@ -568,7 +647,8 @@ section.index .container .content .video_box {
 section.index .container .content .video_box iframe {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 section.index .breakdown {
   width: 100%;
@@ -605,7 +685,8 @@ section.social .content .video_box {
 section.social .content .video_box iframe {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 section.social .content:nth-child(odd) {
   flex-direction: row-reverse;
@@ -711,6 +792,7 @@ section.download .container .info .links {
 section:is(.vision, .arlive) .container h2 {
   font-size: clamp(60px, 9vw, 128px);
   font-weight: 900;
+  font-family: "Nunito", "Noto Sans TC";
 }
 section:is(.vision, .arlive) .container h2:first-of-type {
   color: #d9d9d9;
@@ -723,7 +805,8 @@ section:is(.vision, .arlive) .container h2:not(:first-of-type) {
   text-align: end;
   line-height: 1.25;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.7) 100%);
-  background-clip: text;
+  -webkit-background-clip: text;
+          background-clip: text;
   color: transparent;
 }
 @media (max-width: 767.98px) {
@@ -743,7 +826,8 @@ section:is(.vision, .arlive) .container .video_box {
 section:is(.vision, .arlive) .container .video_box iframe {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 section.privacy {
@@ -835,7 +919,8 @@ section.companion .content .video_box {
 section.companion .content .video_box iframe {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 section.companion .content p {
   padding-top: 73px;

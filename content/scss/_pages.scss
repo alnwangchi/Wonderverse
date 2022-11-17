@@ -9,6 +9,12 @@ section.index {
     width: 100%;
     aspect-ratio: 2 / 1;
     overflow: hidden;
+    @include md {
+      aspect-ratio: 1.2 / 1;
+    }
+    @include sm {
+      aspect-ratio: 0.6 / 1;
+    }
     & > iframe {
       @include iframeSize;
     }
@@ -217,7 +223,7 @@ section:is(.vision, .arlive) {
     h2 {
       font-size: clamp(60px, 9vw, 128px);
       font-weight: $fw_max;
-
+      font-family: $ff_base;
       &:first-of-type {
         color: $clr_dk;
         opacity: 0.25;
