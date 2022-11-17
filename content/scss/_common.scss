@@ -9,7 +9,7 @@ body {
   background-size: 200% 200%;
   animation: gradient 12s ease infinite;
   min-height: 100vh;
-  cursor: url("/content/assets/img/logo.svg"), auto;
+  cursor: url("./content/assets/img/logo.svg"), auto;
   main {
     position: relative;
     overflow-x: hidden;
