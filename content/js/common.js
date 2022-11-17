@@ -9,28 +9,29 @@ $(document).ready(function () {
   // 輪播區塊
   let oMain = document.querySelector('.carousel_main');
   let oUl = oMain.getElementsByTagName('ul')[0];
-  let oLi = oUl.getElementsByTagName('li');
+  let aLi = oUl.getElementsByTagName('li');
 
-  let space = 10;
+  let speed = 4;
   oUl.innerHTML = oUl.innerHTML + oUl.innerHTML;
-  oUl.style.width = oLi[0].offsetWidth * oLi.length + 'px';
+  oUl.style.width = aLi[0].offsetWidth * aLi.length + 'px';
 
   function move() {
     if (oUl.offsetLeft < -oUl.offsetWidth / 2) {
-      oUl.style.left = 0;
+      oUl.style.left = '0';
     }
     if (oUl.offsetLeft > 0) {
       oUl.style.left = -oUl.offsetWidth / 2 + 'px';
     }
-    oUl.style.left = oUl.offsetLeft - space + 'px';
+    // "speed" 前面正負號控制方向
+    oUl.style.left = oUl.offsetLeft - speed + 'px';
   }
-  let timer = setInterval(move, 30);
+  const timer = setInterval(move, 30);
 
   oMain.onmouseover = function () {
-    space = 30;
+    speed = 8;
   };
-  //  開始輪播
+
   oMain.onmouseout = function () {
-    space = 10;
+    speed = 4;
   };
 });

@@ -55,24 +55,31 @@ section.index {
   .carousel_box {
     margin-top: 92px;
     .carousel_main {
-      margin: auto;
       width: 100%;
       height: 500px;
-      overflow: hidden;
+      overflow-x: hidden;
       position: relative;
+      &:hover {
+        transform: scale(1.03);
+      }
       ul {
+        margin: 0;
+        padding-left: 0;
         position: absolute;
+        left: 0;
         top: 0;
-        left: 0px;
         display: flex;
+        transition: unset;
         li {
           width: auto;
           height: 500px;
           list-style: none;
           flex-shrink: 0;
+
           img {
             width: auto;
             height: 100%;
+            max-width: unset;
           }
         }
       }

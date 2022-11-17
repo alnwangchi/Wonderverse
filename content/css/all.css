@@ -674,19 +674,26 @@ section.index .carousel_box {
   margin-top: 92px;
 }
 section.index .carousel_box .carousel_main {
-  margin: auto;
   width: 100%;
   height: 500px;
-  overflow: hidden;
+  overflow-x: hidden;
   position: relative;
 }
+section.index .carousel_box .carousel_main:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+}
 section.index .carousel_box .carousel_main ul {
+  margin: 0;
+  padding-left: 0;
   position: absolute;
+  left: 0;
   top: 0;
-  left: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-transition: unset;
+  transition: unset;
 }
 section.index .carousel_box .carousel_main ul li {
   width: auto;
@@ -698,6 +705,7 @@ section.index .carousel_box .carousel_main ul li {
 section.index .carousel_box .carousel_main ul li img {
   width: auto;
   height: 100%;
+  max-width: unset;
 }
 section.index .container .download {
   padding: 70px 0;
