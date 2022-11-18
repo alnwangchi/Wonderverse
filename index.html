@@ -54,6 +54,14 @@
             allowfullscreen
           ></iframe>
         </div>
+        <div class="carousel_box">
+          <h3>Lifestyle With Virtual Companions</h3>
+          <div class="carousel_main">
+            <ul>
+              <li><img src="./content/assets/img/carousel.png" alt="" /></li>
+            </ul>
+          </div>
+        </div>
         <div class="container">
           <div class="download">
             <a href="">
@@ -193,8 +201,34 @@
   <script>
     AOS.init({ duration: 1200, once: true });
 
-    $('.btn_close').on('click', function () {
-      $(this).parents('.fixed_news').remove();
+    $(document).ready(function () {
+      $('.btn_close').on('click', function () {
+        $(this).parents('.fixed_news').remove();
+      });
+      // 輪播區塊
+      let oMain = document.querySelector('.carousel_main');
+      let oUl = oMain.getElementsByTagName('ul')[0];
+      let aLi = oUl.getElementsByTagName('li');
+      let speed = 4;
+      oUl.innerHTML = oUl.innerHTML + oUl.innerHTML;
+      oUl.style.width = aLi[0].offsetWidth * aLi.length + 'px';
+      function move() {
+        if (oUl.offsetLeft < -oUl.offsetWidth / 2) {
+          oUl.style.left = '0';
+        }
+        if (oUl.offsetLeft > 0) {
+          oUl.style.left = -oUl.offsetWidth / 2 + 'px';
+        }
+        // "speed" 前面正負號控制方向
+        oUl.style.left = oUl.offsetLeft - speed + 'px';
+      }
+      const timer = setInterval(move, 30);
+      oMain.onmouseover = function () {
+        speed = 8;
+      };
+      oMain.onmouseout = function () {
+        speed = 4;
+      };
     });
   </script>
 </html>
