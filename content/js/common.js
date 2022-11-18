@@ -5,6 +5,4 @@ $(document).ready(function () {
   });
 
   $('.go_top').click(() => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-
 });
