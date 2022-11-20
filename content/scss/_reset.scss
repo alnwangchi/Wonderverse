@@ -146,6 +146,11 @@ img {
 button {
   outline: none;
   border: none;
+  cursor: inherit;
+}
+
+iframe {
+  pointer-events: none;
 }
 
 a {

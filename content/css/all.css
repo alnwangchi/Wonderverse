@@ -151,6 +151,11 @@ img {
 button {
   outline: none;
   border: none;
+  cursor: inherit;
+}
+
+iframe {
+  pointer-events: none;
 }
 
 a {
@@ -171,6 +176,8 @@ body {
   cursor: url("../assets/img/logo.svg"), auto;
 }
 body main {
+  width: 100%;
+  height: 100%;
   position: relative;
   overflow-x: hidden;
   padding-top: 80px;
@@ -212,6 +219,7 @@ body .fixed_news {
   position: fixed;
   top: 50%;
   right: 0;
+  z-index: 10;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   width: 230px;
@@ -275,8 +283,6 @@ body .fixed_news .paper .btn_close {
 
 * {
   color: #fff;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
@@ -341,6 +347,10 @@ header {
     padding: 15px 6.25%;
   }
 }
+header * {
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
 header .h_logo_box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -365,6 +375,9 @@ header .h_logo_box h2.gradient {
   -webkit-background-clip: text;
           background-clip: text;
   color: transparent;
+  background-size: 200% 200%;
+  -webkit-animation: gradient 3s ease infinite;
+          animation: gradient 3s ease infinite;
 }
 header > nav {
   width: 65%;
