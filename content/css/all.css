@@ -696,7 +696,7 @@ section.index > .video_box.breakdown p {
   min-width: 840px;
 }
 section.index .carousel_box {
-  margin-top: 92px;
+  padding-top: 92px;
   position: relative;
 }
 @media (max-width: 767.98px) {
@@ -720,6 +720,8 @@ section.index .carousel_box .carousel_main {
   height: 506px;
   overflow-x: hidden;
   position: relative;
+  -webkit-transition: 4s;
+  transition: 4s;
 }
 @media (max-width: 767.98px) {
   section.index .carousel_box .carousel_main {
@@ -727,8 +729,8 @@ section.index .carousel_box .carousel_main {
   }
 }
 section.index .carousel_box .carousel_main:hover {
-  -webkit-transform: scale(1.03);
-          transform: scale(1.03);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 section.index .carousel_box .carousel_main ul {
   margin: 0;

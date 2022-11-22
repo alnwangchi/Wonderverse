@@ -53,7 +53,7 @@ section.index {
   }
   // Hey U Molly wtite here
   .carousel_box {
-    margin-top: 92px;
+    padding-top: 92px;
     position: relative;
     @include md {
       margin-top: 24px;
@@ -73,11 +73,12 @@ section.index {
       height: 506px;
       overflow-x: hidden;
       position: relative;
+      transition: 4s;
       @include md {
         height: 50vw;
       }
       &:hover {
-        transform: scale(1.03);
+        transform: scale(1.05);
       }
       ul {
         margin: 0;
