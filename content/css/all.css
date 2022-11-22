@@ -1001,6 +1001,9 @@ section.download .container .info .links {
   gap: 16px;
 }
 
+section:is(.vision, .arlive) {
+  padding-bottom: 20vh;
+}
 @media (max-width: 767.98px) {
   section:is(.vision, .arlive) .container {
     padding: 0 6.25%;
@@ -1020,6 +1023,7 @@ section:is(.vision, .arlive) .container h2:first-of-type {
 section:is(.vision, .arlive) .container h2:not(:first-of-type) {
   position: relative;
   top: -15vh;
+  right: 1.5vw;
   text-align: end;
   line-height: 1.25;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.1)), to(rgba(255, 255, 255, 0.7)));
