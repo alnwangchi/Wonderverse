@@ -376,8 +376,8 @@ header .h_logo_box h2.gradient {
           background-clip: text;
   color: transparent;
   background-size: 200% 200%;
-  -webkit-animation: gradient 3s ease infinite;
-          animation: gradient 3s ease infinite;
+  -webkit-animation: gradient 7s ease infinite;
+          animation: gradient 7s ease infinite;
 }
 header > nav {
   width: 65%;
