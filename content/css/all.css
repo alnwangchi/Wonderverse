@@ -400,6 +400,11 @@ header > nav a {
 }
 header > nav a:hover {
   color: #54b8c6;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+header > nav a.active {
+  color: #54b8c6;
 }
 header .hamburger {
   display: none;
@@ -512,6 +517,12 @@ footer .container nav a,
 footer .container .f_other_box a {
   position: relative;
   font-weight: 500;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+footer .container nav a:hover,
+footer .container .f_other_box a:hover {
+  color: #54b8c6;
 }
 footer .container nav a:not(:last-child)::after,
 footer .container .f_other_box a:not(:last-child)::after {

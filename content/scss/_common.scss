@@ -179,6 +179,10 @@ header {
       font-weight: $fw_bolder;
       &:hover {
         color: $clr_1;
+        transform: scale(1.1);
+      }
+      &.active {
+        color: $clr_1;
       }
     }
   }
@@ -274,6 +278,10 @@ footer {
       a {
         position: relative;
         font-weight: $fw_bold;
+        transition: 0.4s;
+        &:hover {
+          color: $clr_1;
+        }
         &:not(:last-child) {
           &::after {
             content: '';
