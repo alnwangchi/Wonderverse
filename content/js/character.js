@@ -5,8 +5,8 @@ $(document).ready(function () {
   // TODO: 切換圖片
   var showTab = function () {
     var tabIndex = $('.tabs').find('.selected').index();
-    $tabContents.eq(tabIndex).show();
-    $tabContents.eq(tabIndex).siblings('.tab-content').hide();
+    $tabContents.eq(tabIndex).siblings('.tab-content').fadeOut();
+    $tabContents.eq(tabIndex).fadeIn(1200);
   };
   $tabs.eq(0).addClass('selected');
   showTab();
