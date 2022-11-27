@@ -1102,6 +1102,8 @@ section.companion {
           flex-direction: column;
 }
 section.companion .tab {
+  position: relative;
+  z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1157,13 +1159,82 @@ section.companion .tab-btn {
 }
 section.companion .tab .btn-active {
   color: #fff;
-  background: -webkit-gradient(linear, left top, right top, from(#9747ff), to(#54b8c6));
-  background: linear-gradient(90deg, #9747ff 0%, #54b8c6 100%);
-  border-radius: 100px;
 }
 section.companion .tab .btn-active > .active {
   -webkit-filter: brightness(0) invert(1);
           filter: brightness(0) invert(1);
+}
+section.companion .tab input[type=radio] {
+  display: none;
+}
+section.companion .tab input[id=input_calender]:checked ~ .glider {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+section.companion .tab input[id=input_food]:checked ~ .glider {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+section.companion .tab input[id=input_emotion]:checked ~ .glider {
+  -webkit-transform: translateX(200%);
+          transform: translateX(200%);
+}
+section.companion .tab input[id=input_music]:checked ~ .glider {
+  -webkit-transform: translateX(300%);
+          transform: translateX(300%);
+}
+@media (max-width: 575.98px) {
+  section.companion .tab input[id=input_music]:checked ~ .glider {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+}
+section.companion .tab input[id=input_clothing]:checked ~ .glider {
+  -webkit-transform: translateX(400%);
+          transform: translateX(400%);
+}
+@media (max-width: 575.98px) {
+  section.companion .tab input[id=input_clothing]:checked ~ .glider {
+    -webkit-transform: translate(100%, 100%);
+            transform: translate(100%, 100%);
+  }
+}
+section.companion .tab input[id=input_speech]:checked ~ .glider {
+  -webkit-transform: translateX(480%);
+          transform: translateX(480%);
+}
+@media (max-width: 991.98px) {
+  section.companion .tab input[id=input_speech]:checked ~ .glider {
+    -webkit-transform: translateX(500%);
+            transform: translateX(500%);
+  }
+}
+@media (max-width: 575.98px) {
+  section.companion .tab input[id=input_speech]:checked ~ .glider {
+    -webkit-transform: translate(200%, 100%);
+            transform: translate(200%, 100%);
+  }
+}
+section.companion .tab .glider {
+  position: absolute;
+  height: 42px;
+  width: 130px;
+  background: -webkit-gradient(linear, left top, right top, from(#9747ff), to(#54b8c6));
+  background: linear-gradient(90deg, #9747ff 0%, #54b8c6 100%);
+  z-index: -1;
+  border-radius: 100px;
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+}
+@media (max-width: 991.98px) {
+  section.companion .tab .glider {
+    width: 95px;
+  }
+}
+@media (max-width: 575.98px) {
+  section.companion .tab .glider {
+    width: 100px;
+  }
 }
 section.companion .content {
   display: none;
