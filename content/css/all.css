@@ -480,7 +480,7 @@ header .menu nav a:not(:last-of-type) {
 }
 
 footer {
-  background: linear-gradient(92.81deg, #c67edf 0%, #7172c8 47.4%, #54b8c6 100%);
+  background: transparent;
 }
 footer .container {
   position: relative;
@@ -668,6 +668,22 @@ section.index > .video_box.breakdown {
   margin-top: 85vh;
   margin-bottom: 60vh;
   overflow: unset;
+  width: 100%;
+  aspect-ratio: 16/9;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+@media (max-width: 575.98px) {
+  section.index > .video_box.breakdown {
+    aspect-ratio: 1/1.6;
+  }
+}
+@media (max-width: 575.98px) {
+  section.index > .video_box.breakdown {
+    margin-top: 35vh;
+    margin-bottom: 85vh;
+  }
 }
 section.index > .video_box.breakdown div iframe {
   position: absolute;
@@ -680,13 +696,35 @@ section.index > .video_box.breakdown div iframe {
   aspect-ratio: 9/16;
   background-color: #ccc;
 }
+@media (max-width: 575.98px) {
+  section.index > .video_box.breakdown div iframe {
+    top: unset;
+    bottom: -50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
 section.index > .video_box.breakdown h2 {
   position: absolute;
   top: -7.5vh;
   left: 37.5%;
 }
+@media (max-width: 575.98px) {
+  section.index > .video_box.breakdown h2 {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    font-size: clamp(2rem, 15vw, 12rem);
+  }
+}
 section.index > .video_box.breakdown h2 span {
   font-size: clamp(1.5rem, 3.5vw, 3.375rem);
+}
+@media (max-width: 575.98px) {
+  section.index > .video_box.breakdown h2 span {
+    font-size: clamp(1.5rem, 9vw, 6rem);
+  }
 }
 section.index > .video_box.breakdown p {
   position: absolute;
@@ -694,6 +732,16 @@ section.index > .video_box.breakdown p {
   left: 37.5%;
   font-size: 2rem;
   min-width: 840px;
+}
+@media (max-width: 575.98px) {
+  section.index > .video_box.breakdown p {
+    width: 87%;
+    bottom: -95%;
+    min-width: unset;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
 }
 section.index .carousel_box {
   padding-top: 92px;
@@ -835,13 +883,6 @@ section.index .container .content .video_box iframe {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-}
-section.index .breakdown {
-  width: 100%;
-  aspect-ratio: 16/9;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 section.social .content {
@@ -1085,6 +1126,9 @@ section.privacy .container .content {
   border-radius: 20px;
   padding: 24px;
   background-color: rgba(255, 255, 255, 0.5);
+}
+section.privacy .container .content p {
+  max-width: unset;
 }
 
 section.companion {

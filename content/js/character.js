@@ -13,7 +13,7 @@ $(document).ready(function () {
   $tabs.click(function () {
     $(this).addClass('selected').siblings('.selected').removeClass('selected');
     showTab();
-  })
+  });
 
   var openSingleWindow = function (windowInstance, url) {
     if (!window[windowInstance] || window[windowInstance].closed) {
@@ -22,11 +22,10 @@ $(document).ready(function () {
       window[windowInstance].location = url;
     }
     window[windowInstance].focus();
-  }
+  };
 
   $chatBtns.click(function () {
     const url = $(this).attr('data-url');
     openSingleWindow('chat', url);
-  })
-
+  });
 });
