@@ -313,6 +313,10 @@ section:is(.vision, .arlive) {
         @include iframeSize;
       }
     }
+    .toggleVoice {
+      position: relative;
+      z-index: 9999 !important;
+    }
   }
 }
 

@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ARLive</title>
-    <link rel="shortcut icon" type="image/x-icon" href="./content/assets/img/favicon.png" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="./content/assets/img/favicon.png"
+    />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="./content/css/all.min.css" />
   </head>
@@ -49,13 +53,19 @@
           <h2>Virtual Companions</h2>
           <div class="video_box">
             <iframe
-              src="https://www.youtube.com/embed/zfqiLSjxJ14?controls=0"
+              src="https://www.youtube.com/embed/OBH26hA6GLA?enablejsapi=1&controls=0&loop=1&playsinline=1"
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
+              id="video"
             ></iframe>
           </div>
+          <input
+            type="image"
+            src="./content/assets/img/novoice.svg"
+            class="toggleVoice"
+          />
           <h2 data-aos="fade-left">Brining</h2>
           <h2 data-aos="fade-left" data-aos-delay="100">Virtual</h2>
           <h2 data-aos="fade-left" data-aos-delay="200">Companions</h2>
@@ -105,6 +115,35 @@
     crossorigin="anonymous"
   ></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    var player;
+    function onYouTubeIframeAPIReady() {
+      // 一般使用 影片的id寫在js裡
+      player = new YT.Player("video", {
+        events: {
+          onReady: onPlayerReady,
+        },
+      });
+    }
+    function onPlayerReady(e) {
+      // 為確保瀏覽器上可以自動播放，要把影片調成靜音
+      e.target.mute().playVideo();
+      let mute = true;
+      const toggleVoice = document.querySelector(".toggleVoice");
+      toggleVoice.addEventListener("click", () => {
+        if (mute) {
+          toggleVoice.src = "./content/assets/img/voice.svg";
+          e.target.unMute().playVideo();
+          mute = false;
+        } else {
+          toggleVoice.src = "./content/assets/img/novoice.svg";
+          e.target.mute().playVideo();
+          mute = true;
+        }
+      });
+    }
+  </script>
   <script src="./content/js/common.js"></script>
   <script>
     AOS.init({ duration: 1200, once: true });

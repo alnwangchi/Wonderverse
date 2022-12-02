@@ -1066,6 +1066,10 @@ section:is(.vision, .arlive) .container .video_box iframe {
   -o-object-fit: cover;
      object-fit: cover;
 }
+section:is(.vision, .arlive) .container .toggleVoice {
+  position: relative;
+  z-index: 9999 !important;
+}
 
 section.privacy {
   padding: 46px 15% 93px;
