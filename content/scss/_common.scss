@@ -259,7 +259,8 @@ header {
 // }
 
 footer {
-  background: linear-gradient(92.81deg, $clr_2 0%, $clr_4 47.4%, $clr_1 100%);
+  // background: linear-gradient(92.81deg, $clr_2 0%, $clr_4 47.4%, $clr_1 100%);
+  background: transparent;
   .container {
     position: relative;
     padding: 44px 0 8px;

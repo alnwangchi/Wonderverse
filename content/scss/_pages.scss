@@ -23,6 +23,16 @@ section.index {
       margin-top: 85vh;
       margin-bottom: 60vh;
       overflow: unset;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      display: flex;
+      @include sm {
+        aspect-ratio: 1 / 1.6;
+      }
+      @include sm {
+        margin-top: 35vh;
+        margin-bottom: 85vh;
+      }
       $commonleft: 37.5%;
       div {
         iframe {
@@ -32,14 +42,28 @@ section.index {
           transform: translateY(-50%);
           border: 1px solid #f00;
           @include occupation;
+          @include sm {
+            top: unset;
+            bottom: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+          }
         }
       }
       h2 {
         position: absolute;
         top: -7.5vh;
         left: $commonleft;
+        @include sm {
+          left: 50%;
+          transform: translateX(-50%);
+          font-size: clamp(2rem, 15vw, 12rem);
+        }
         span {
           font-size: clamp($fs_h4, 3.5vw, $fs_mega);
+          @include sm {
+            font-size: clamp($fs_h4, 9vw, 6rem);
+          }
         }
       }
       p {
@@ -48,6 +72,13 @@ section.index {
         left: $commonleft;
         font-size: $fs_h3;
         min-width: 840px;
+        @include sm {
+          width: 87%;
+          bottom: -95%;
+          min-width: unset;
+          left: 50%;
+          transform: translateX(-50%);
+        }
       }
     }
   }
@@ -153,11 +184,6 @@ section.index {
         }
       }
     }
-  }
-  .breakdown {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    display: flex;
   }
 }
 
@@ -336,6 +362,9 @@ section.privacy {
       border-radius: 20px;
       padding: 24px;
       background-color: rgba($clr_base, 0.5);
+      p {
+        max-width: unset;
+      }
     }
   }
 }
