@@ -339,6 +339,10 @@ section:is(.vision, .arlive) {
         @include iframeSize;
       }
     }
+    .toggleBox {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
     .toggleVoice {
       position: relative;
       z-index: 9999 !important;
