@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About</title>
-    <link rel="shortcut icon" type="image/x-icon" href="./content/assets/img/favicon.png" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="./content/assets/img/favicon.png"
+    />
     <link rel="stylesheet" href="./content/css/all.min.css" />
   </head>
   <body>
@@ -63,7 +67,11 @@
                   <p class="title">Wonder</p>
                   <span class="title-right">
                     <span class="text">by</span>
-                    <img class="logo" src="./content//assets//img//logo-small.png" alt="" />
+                    <img
+                      class="logo"
+                      src="./content//assets//img//logo-small.png"
+                      alt=""
+                    />
                     <span class="gradient">Wonderverse</span>
                   </span>
                 </div>
@@ -91,15 +99,16 @@
                 </ul>
                 <div class="description">
                   <p>
-                    Wonder is a 16 year old girl who has escaped from the dimension of Helios.
-                    Passing through an interdimensional wormhole, she lost her memory and only
-                    remembers her name.
+                    Wonder is a 16 year old girl who has escaped from the
+                    dimension of Helios. Passing through an interdimensional
+                    wormhole, she lost her memory and only remembers her name.
                   </p>
                   <p>
-                    In order to discover her past, she embarks on a learning endeavor. Optimistic,
-                    kind and cheerful, she is a brave spirit, who is loyal to the core. She loves
-                    collecting things with rare artifacts and is fascinated with the myths and
-                    legends of the world.
+                    In order to discover her past, she embarks on a learning
+                    endeavor. Optimistic, kind and cheerful, she is a brave
+                    spirit, who is loyal to the core. She loves collecting
+                    things with rare artifacts and is fascinated with the myths
+                    and legends of the world.
                   </p>
                 </div>
                 <button class="chat-button" data-url="https://www.google.com">
@@ -121,7 +130,11 @@
                   <p class="title">Pippa</p>
                   <span class="title-right">
                     <span class="text">by</span>
-                    <img class="logo" src="./content//assets//img//logo-small.png" alt="" />
+                    <img
+                      class="logo"
+                      src="./content//assets//img//logo-small.png"
+                      alt=""
+                    />
                     <span class="gradient">Wonderverse</span>
                   </span>
                 </div>
@@ -149,15 +162,16 @@
                 </ul>
                 <div class="description">
                   <p>
-                    3.33333~ The cutest rabbit from Phase World. The biggest troublemaker the rabbit
-                    village has ever known. Pippa tormented the villagers with her harmless mischief
-                    every day. She even went on to the neighboring fox village to carry out her evil
-                    deeds!
+                    3.33333~ The cutest rabbit from Phase World. The biggest
+                    troublemaker the rabbit village has ever known. Pippa
+                    tormented the villagers with her harmless mischief every
+                    day. She even went on to the neighboring fox village to
+                    carry out her evil deeds!
                   </p>
                   <p>
-                    The crazy rabbit will often punch and kick. Argumentative, eccentric, abrasive,
-                    and fearful of others. but once you get to know her, you will become one of her
-                    favorite people.
+                    The crazy rabbit will often punch and kick. Argumentative,
+                    eccentric, abrasive, and fearful of others. but once you get
+                    to know her, you will become one of her favorite people.
                   </p>
                 </div>
                 <button class="chat-button">
@@ -166,12 +180,18 @@
                 </button>
                 <div class="vedio-box">
                   <iframe
-                    src="https://www.youtube.com/embed/uYLyTyUajrU?enablejsapi=1&controls=0&loop=1&playsinline=1"
+                    src="https://www.youtube.com/embed/OBH26hA6GLA?enablejsapi=1&controls=0&loop=1&playsinline=1&autoPlay=1&mute=0"
                     title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen
+                    id="video0"
                   ></iframe>
+                  <input
+                    type="image"
+                    src="./content/assets/img/novoice.svg"
+                    class="toggleVoice"
+                  />
                 </div>
               </div>
             </div>
@@ -225,5 +245,71 @@
   ></script>
   <script src="./content/js/character.js"></script>
   <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    var player;
+    function onYouTubeIframeAPIReady() {
+      // 一般使用 影片的id寫在js裡
+      player = new YT.Player("video0", {
+        events: {
+          onReady: onPlayerReady,
+        },
+      });
+    }
+    function onPlayerReady(e) {
+      // 檢查 YT object 是否已存在全域
+      checkYT();
+      // 為確保瀏覽器上可以自動播放，要把影片調成靜音
+      e.target.mute().playVideo();
+      let mute = true;
+      const toggleVoice = document.querySelector(".toggleVoice");
+      toggleVoice.addEventListener("click", () => {
+        if (mute) {
+          toggleVoice.src = "./content/assets/img/voice.svg";
+          e.target.unMute().playVideo();
+          mute = false;
+        } else {
+          toggleVoice.src = "./content/assets/img/novoice.svg";
+          e.target.mute().playVideo();
+          mute = true;
+        }
+      });
+    }
+
+    var player2;
+    function yt_init() {
+      player2 = new YT.Player("video1", {
+        events: {
+          onReady: onPlayerReady1,
+        },
+      });
+    }
+
+    var checkYT = () => {
+      if (YT && YT.loaded) {
+        yt_init();
+
+        clearInterval(checkYT);
+      }
+    };
+
+    function onPlayerReady1(e) {
+      console.log(e);
+      // 為確保瀏覽器上可以自動播放，要把影片調成靜音
+      e.target.mute().playVideo();
+      let mute = true;
+      const toggleVoice1 = document.querySelector(".toggleVoice1");
+      toggleVoice1.addEventListener("click", () => {
+        if (mute) {
+          toggleVoice1.src = "./content/assets/img/voice.svg";
+          e.target.unMute().playVideo();
+          mute = false;
+        } else {
+          toggleVoice1.src = "./content/assets/img/novoice.svg";
+          e.target.mute().playVideo();
+          mute = true;
+        }
+      });
+    }
+  </script>
   <script src="./content/js/common.js"></script>
 </html>

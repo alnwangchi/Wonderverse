@@ -202,13 +202,14 @@ section.social {
       max-width: 640px;
       aspect-ratio: 16 / 9;
       border-radius: 15px;
-      overflow: hidden;
       margin-right: 16px;
       @include md {
         margin: unset;
         margin-bottom: 16px;
       }
       iframe {
+        overflow: hidden;
+        padding-bottom: 4px;
         @include iframeSize;
       }
     }
@@ -706,13 +707,17 @@ section.character {
           max-width: 640px;
           aspect-ratio: 16 / 9;
           border-radius: 15px;
-          overflow: hidden;
           @include md {
             margin: unset;
             margin-bottom: 16px;
           }
           iframe {
+            overflow: hidden;
+            padding-bottom: 4px;
             @include iframeSize;
+          }
+          > input {
+            filter: brightness(0);
           }
         }
       }
