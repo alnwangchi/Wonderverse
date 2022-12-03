@@ -8,7 +8,6 @@ section.index {
     position: relative;
     width: 100%;
     aspect-ratio: 2 / 1;
-    overflow: hidden;
     @include md {
       aspect-ratio: 1.2 / 1;
     }
@@ -16,7 +15,17 @@ section.index {
       aspect-ratio: 0.6 / 1;
     }
     & > iframe {
+      overflow: hidden;
       @include iframeSize;
+    }
+    & > div {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      & > input {
+        padding: 20px 80px;
+      }
     }
     // 最下方兩部影片重疊處
     &.breakdown {
@@ -173,13 +182,14 @@ section.index {
         max-width: 640px;
         aspect-ratio: 16 / 9;
         border-radius: 15px;
-        overflow: hidden;
         margin-right: 48px;
         @include md {
           margin: unset;
           margin-bottom: 16px;
         }
         iframe {
+          overflow: hidden;
+          padding-bottom: 4px;
           @include iframeSize;
         }
       }
