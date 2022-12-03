@@ -117,12 +117,18 @@
                 </button>
                 <div class="vedio-box">
                   <iframe
-                    src="https://www.youtube.com/embed/uYLyTyUajrU?enablejsapi=1&controls=0&loop=1&playsinline=1"
+                    src="https://www.youtube.com/embed/OBH26hA6GLA?enablejsapi=1&controls=0&loop=1&playsinline=1&autoPlay=1&mute=0"
                     title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen
+                    id="video0"
                   ></iframe>
+                  <input
+                    type="image"
+                    src="./content/assets/img/novoice.svg"
+                    class="toggleVoice"
+                  />
                 </div>
               </div>
               <div class="tab-content">
@@ -180,17 +186,17 @@
                 </button>
                 <div class="vedio-box">
                   <iframe
-                    src="https://www.youtube.com/embed/OBH26hA6GLA?enablejsapi=1&controls=0&loop=1&playsinline=1&autoPlay=1&mute=0"
+                    src="https://www.youtube.com/embed/Z5RjZTPJNvY?enablejsapi=1&controls=0&loop=1&playsinline=1&autoPlay=1"
                     title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen
-                    id="video0"
+                    id="video1"
                   ></iframe>
                   <input
                     type="image"
                     src="./content/assets/img/novoice.svg"
-                    class="toggleVoice"
+                    class="toggleVoice1"
                   />
                 </div>
               </div>
@@ -245,71 +251,6 @@
   ></script>
   <script src="./content/js/character.js"></script>
   <script src="https://www.youtube.com/iframe_api"></script>
-  <script>
-    var player;
-    function onYouTubeIframeAPIReady() {
-      // 一般使用 影片的id寫在js裡
-      player = new YT.Player("video0", {
-        events: {
-          onReady: onPlayerReady,
-        },
-      });
-    }
-    function onPlayerReady(e) {
-      // 檢查 YT object 是否已存在全域
-      checkYT();
-      // 為確保瀏覽器上可以自動播放，要把影片調成靜音
-      e.target.mute().playVideo();
-      let mute = true;
-      const toggleVoice = document.querySelector(".toggleVoice");
-      toggleVoice.addEventListener("click", () => {
-        if (mute) {
-          toggleVoice.src = "./content/assets/img/voice.svg";
-          e.target.unMute().playVideo();
-          mute = false;
-        } else {
-          toggleVoice.src = "./content/assets/img/novoice.svg";
-          e.target.mute().playVideo();
-          mute = true;
-        }
-      });
-    }
-
-    var player2;
-    function yt_init() {
-      player2 = new YT.Player("video1", {
-        events: {
-          onReady: onPlayerReady1,
-        },
-      });
-    }
-
-    var checkYT = () => {
-      if (YT && YT.loaded) {
-        yt_init();
-
-        clearInterval(checkYT);
-      }
-    };
-
-    function onPlayerReady1(e) {
-      console.log(e);
-      // 為確保瀏覽器上可以自動播放，要把影片調成靜音
-      e.target.mute().playVideo();
-      let mute = true;
-      const toggleVoice1 = document.querySelector(".toggleVoice1");
-      toggleVoice1.addEventListener("click", () => {
-        if (mute) {
-          toggleVoice1.src = "./content/assets/img/voice.svg";
-          e.target.unMute().playVideo();
-          mute = false;
-        } else {
-          toggleVoice1.src = "./content/assets/img/novoice.svg";
-          e.target.mute().playVideo();
-          mute = true;
-        }
-      });
-    }
-  </script>
+  <script src="./content/js/multipleControl.js"></script>
   <script src="./content/js/common.js"></script>
 </html>
