@@ -1449,12 +1449,14 @@ section.character .content .tab-wrap .tabs .tab.selected .text {
   background-color: #fff;
   color: transparent;
 }
-section.character .content .tab-wrap .tab-content {
-  padding: 30px;
+section.character .content .tab-wrap .card {
   background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
+}
+section.character .content .tab-wrap .tab-content {
+  padding: 30px;
 }
 section.character .content .tab-wrap .tab-content .title-row {
   display: -webkit-box;
