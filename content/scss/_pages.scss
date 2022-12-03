@@ -460,7 +460,7 @@ section.companion {
     }
     input[id='input_clothing']:checked {
       & ~ .glider {
-        transform: translateX(400%);
+        transform: translateX(390%);
         @include sm {
           transform: translate(100%, 100%);
         }
