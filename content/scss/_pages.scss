@@ -358,7 +358,8 @@ section.privacy {
     }
     .content {
       width: 100%;
-      min-height: 800px;
+      max-height: 800px;
+      overflow-y: scroll;
       border-radius: 20px;
       padding: 24px;
       background-color: rgba($clr_base, 0.5);
