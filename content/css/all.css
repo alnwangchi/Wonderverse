@@ -93,6 +93,10 @@ video {
   font: inherit;
   vertical-align: baseline;
   text-decoration: none;
+  -webkit-user-select: none !important;
+     -moz-user-select: none !important;
+      -ms-user-select: none !important;
+          user-select: none !important;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -1149,6 +1153,10 @@ section.privacy .container .content {
 }
 section.privacy .container .content p {
   max-width: unset;
+  -webkit-user-select: none !important;
+     -moz-user-select: none !important;
+      -ms-user-select: none !important;
+          user-select: none !important;
 }
 
 section.companion {

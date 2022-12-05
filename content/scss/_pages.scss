@@ -380,6 +380,7 @@ section.privacy {
       background-color: rgba($clr_base, 0.5);
       p {
         max-width: unset;
+        user-select: none !important;
       }
     }
   }
