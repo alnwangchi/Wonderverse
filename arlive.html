@@ -61,11 +61,13 @@
               id="video"
             ></iframe>
           </div>
-          <input
-            type="image"
-            src="./content/assets/img/novoice.svg"
-            class="toggleVoice"
-          />
+          <div class="toggleBox">
+            <input
+              type="image"
+              src="./content/assets/img/novoice.svg"
+              class="toggleVoice"
+            />
+          </div>
           <h2 data-aos="fade-left">Brining</h2>
           <h2 data-aos="fade-left" data-aos-delay="100">Virtual</h2>
           <h2 data-aos="fade-left" data-aos-delay="200">Companions</h2>
@@ -116,34 +118,7 @@
   ></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://www.youtube.com/iframe_api"></script>
-  <script>
-    var player;
-    function onYouTubeIframeAPIReady() {
-      // 一般使用 影片的id寫在js裡
-      player = new YT.Player("video", {
-        events: {
-          onReady: onPlayerReady,
-        },
-      });
-    }
-    function onPlayerReady(e) {
-      // 為確保瀏覽器上可以自動播放，要把影片調成靜音
-      e.target.mute().playVideo();
-      let mute = true;
-      const toggleVoice = document.querySelector(".toggleVoice");
-      toggleVoice.addEventListener("click", () => {
-        if (mute) {
-          toggleVoice.src = "./content/assets/img/voice.svg";
-          e.target.unMute().playVideo();
-          mute = false;
-        } else {
-          toggleVoice.src = "./content/assets/img/novoice.svg";
-          e.target.mute().playVideo();
-          mute = true;
-        }
-      });
-    }
-  </script>
+  <script src="./content/js/arlive_vision.js"></script>
   <script src="./content/js/common.js"></script>
   <script>
     AOS.init({ duration: 1200, once: true });

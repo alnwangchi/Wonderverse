@@ -52,12 +52,20 @@
       <section class="index">
         <div class="video_box">
           <iframe
-            src="https://www.youtube.com/embed/uYLyTyUajrU?enablejsapi=1&controls=0&loop=1&playsinline=1"
+            src="https://www.youtube.com/embed/OBH26hA6GLA?enablejsapi=1&controls=0&loop=1&playsinline=1&autoPlay=1&mute=0"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
+            id="video0"
           ></iframe>
+          <div>
+            <input
+              type="image"
+              src="./content/assets/img/novoice.svg"
+              class="toggleVoice"
+            />
+          </div>
         </div>
         <div class="carousel_box">
           <h3>Lifestyle With Virtual Companions</h3>
@@ -100,19 +108,26 @@
           <div class="content">
             <div class="video_box">
               <iframe
-                src="https://www.youtube.com/embed/3iK43nEhbAY"
+                src="https://www.youtube.com/embed/Z5RjZTPJNvY?enablejsapi=1&controls=0&loop=1&playsinline=1&autoPlay=1"
                 title="YouTube video player"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
+                id="video1"
               ></iframe>
+              <input
+                type="image"
+                src="./content/assets/img/novoice.svg"
+                class="toggleVoice1"
+              />
             </div>
             <div class="text_box" data-aos="fade-down">
               <h3>Customization</h3>
               <p>
-                Virtual companions have a personality of their own. Their behavior and attitude
-                change depending on the interactions you have with them. “being nice and being
-                unfriendly can both be a benefit and drawback.”
+                Virtual companions have a personality of their own. Their
+                behavior and attitude change depending on the interactions you
+                have with them. “being nice and being unfriendly can both be a
+                benefit and drawback.”
               </p>
             </div>
           </div>
@@ -211,6 +226,7 @@
 
   <script src="./content/js/aos.js"></script>
   <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="./content/js/multipleControl.js"></script>
   <script src="./content/js/common.js"></script>
   <script>
     AOS.init({ duration: 1200, once: true });
