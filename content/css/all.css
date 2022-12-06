@@ -1229,6 +1229,9 @@ section.companion .tab-btn {
   padding: 8px 18px;
   gap: 10px;
 }
+section.companion .tab-btn:hover {
+  cursor: url("../assets/img/logo.svg"), auto;
+}
 section.companion .tab .btn-active {
   color: #fff;
 }
