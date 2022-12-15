@@ -1341,30 +1341,6 @@ section.companion .content.active {
   display: block;
   text-align: center;
 }
-section.companion .polygon {
-  position: absolute;
-  width: 20%;
-}
-section.companion .polygon_left {
-  opacity: 0.5;
-  top: 43%;
-  left: 0%;
-}
-section.companion .polygon_group {
-  opacity: 0.37;
-  left: 0%;
-  bottom: 0%;
-}
-section.companion .polygon_right {
-  opacity: 0.5;
-  top: 48%;
-  right: 0%;
-}
-section.companion .polygon_center {
-  opacity: 0.5;
-  top: 63%;
-  right: 5%;
-}
 
 section.character {
   padding-bottom: 25vh;
@@ -1623,6 +1599,31 @@ section.character .content .tab-wrap .tab-content .vedio-box iframe {
 section.character .content .tab-wrap .tab-content .vedio-box > input {
   -webkit-filter: brightness(0);
           filter: brightness(0);
+}
+
+.polygon {
+  position: absolute;
+  width: 20%;
+}
+.polygon_left {
+  opacity: 0.5;
+  top: 43%;
+  left: 0%;
+}
+.polygon_group {
+  opacity: 0.37;
+  left: 0%;
+  bottom: 0%;
+}
+.polygon_right {
+  opacity: 0.5;
+  top: 48%;
+  right: 0%;
+}
+.polygon_center {
+  opacity: 0.5;
+  top: 63%;
+  right: 5%;
 }
 
 .path {

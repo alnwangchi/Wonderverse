@@ -526,30 +526,6 @@ section.companion {
     display: block;
     text-align: center;
   }
-  .polygon {
-    position: absolute;
-    width: 20%;
-    &_left {
-      opacity: 0.5;
-      top: 43%;
-      left: 0%;
-    }
-    &_group {
-      opacity: 0.37;
-      left: 0%;
-      bottom: 0%;
-    }
-    &_right {
-      opacity: 0.5;
-      top: 48%;
-      right: 0%;
-    }
-    &_center {
-      opacity: 0.5;
-      top: 63%;
-      right: 5%;
-    }
-  }
 }
 
 section.character {
@@ -746,6 +722,31 @@ section.character {
         }
       }
     }
+  }
+}
+
+.polygon {
+  position: absolute;
+  width: 20%;
+  &_left {
+    opacity: 0.5;
+    top: 43%;
+    left: 0%;
+  }
+  &_group {
+    opacity: 0.37;
+    left: 0%;
+    bottom: 0%;
+  }
+  &_right {
+    opacity: 0.5;
+    top: 48%;
+    right: 0%;
+  }
+  &_center {
+    opacity: 0.5;
+    top: 63%;
+    right: 5%;
   }
 }
 
