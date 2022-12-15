@@ -698,6 +698,10 @@ section.index > .video_box.breakdown {
     margin-bottom: 85vh;
   }
 }
+section.index > .video_box.breakdown div {
+  bottom: unset;
+  top: 50%;
+}
 section.index > .video_box.breakdown div iframe {
   position: absolute;
   top: 50%;

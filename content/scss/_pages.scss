@@ -44,6 +44,8 @@ section.index {
       }
       $commonleft: 37.5%;
       div {
+        bottom: unset;
+        top: 50%;
         iframe {
           position: absolute;
           top: 50%;
@@ -427,7 +429,7 @@ section.companion {
       padding: 8px 18px;
       gap: 10px;
       &:hover {
-        cursor: url("../assets/img/logo.svg"), auto;
+        cursor: url('../assets/img/logo.svg'), auto;
       }
     }
 
@@ -437,25 +439,25 @@ section.companion {
         filter: brightness(0) invert(1);
       }
     }
-    input[type="radio"] {
+    input[type='radio'] {
       display: none;
     }
-    input[id="input_calender"]:checked {
+    input[id='input_calender']:checked {
       & ~ .glider {
         transform: translateX(0%);
       }
     }
-    input[id="input_food"]:checked {
+    input[id='input_food']:checked {
       & ~ .glider {
         transform: translateX(100%);
       }
     }
-    input[id="input_emotion"]:checked {
+    input[id='input_emotion']:checked {
       & ~ .glider {
         transform: translateX(200%);
       }
     }
-    input[id="input_music"]:checked {
+    input[id='input_music']:checked {
       & ~ .glider {
         transform: translateX(300%);
         @include sm {
@@ -463,7 +465,7 @@ section.companion {
         }
       }
     }
-    input[id="input_clothing"]:checked {
+    input[id='input_clothing']:checked {
       & ~ .glider {
         transform: translateX(390%);
         @include sm {
@@ -471,7 +473,7 @@ section.companion {
         }
       }
     }
-    input[id="input_speech"]:checked {
+    input[id='input_speech']:checked {
       & ~ .glider {
         transform: translateX(480%);
         @include lg {
@@ -588,11 +590,7 @@ section.character {
           &.selected {
             background-color: $clr_base;
             .text {
-              background-image: linear-gradient(
-                91.04deg,
-                $clr_1 0.89%,
-                $clr_4 99.36%
-              );
+              background-image: linear-gradient(91.04deg, $clr_1 0.89%, $clr_4 99.36%);
               background-clip: text;
               background-color: $clr_base;
               color: transparent;
@@ -629,12 +627,7 @@ section.character {
               font-size: $fs_h5;
               &.gradient {
                 font-weight: $fw_bolder;
-                background: linear-gradient(
-                  92.09deg,
-                  $clr_5 0.54%,
-                  $clr_1 43.02%,
-                  $clr_4 101.24%
-                );
+                background: linear-gradient(92.09deg, $clr_5 0.54%, $clr_1 43.02%, $clr_4 101.24%);
                 background-clip: text;
                 color: transparent;
               }
@@ -660,7 +653,7 @@ section.character {
           }
           li {
             &::marker {
-              content: "✦ ";
+              content: '✦ ';
               color: $clr_6;
             }
           }

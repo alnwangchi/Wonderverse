@@ -15,5 +15,6 @@
   "liveSassCompile.settings.autoprefix": [
     "> 1%", // 瀏覽器市佔率
     "last 2 versions" // 支援最新的版本數
-  ]
+  ],
+  "MarkdownPaste.path": "./image"
 }

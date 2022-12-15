@@ -5,11 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Index</title>
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="./content/assets/img/favicon.png"
-    />
+    <link rel="shortcut icon" type="image/x-icon" href="./content/assets/img/favicon.png" />
     <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" /> -->
     <link rel="stylesheet" href="./content/css/aos.css" />
     <link rel="stylesheet" href="./content/css/all.min.css" />
@@ -60,11 +56,7 @@
             id="video0"
           ></iframe>
           <div>
-            <input
-              type="image"
-              src="./content/assets/img/novoice.svg"
-              class="toggleVoice"
-            />
+            <input type="image" src="./content/assets/img/novoice.svg" class="toggleVoice" />
           </div>
         </div>
         <div class="carousel_box">
@@ -85,23 +77,19 @@
             </a>
           </div>
           <h4 data-aos="fade-down">
-            Wonderverse is the world’s first all-in-one mobile platform where
-            userscan live alongside their favorite virtual companions.
+            Wonderverse is the world’s first all-in-one mobile platform where userscan live
+            alongside their favorite virtual companions.
           </h4>
           <div class="vc_box">
-            <img
-              class="removeWhiteBackground"
-              src="./content/assets/img/tmp.webp"
-              alt=""
-            />
+            <img class="removeWhiteBackground" src="./content/assets/img/tmp.webp" alt="" />
             <div class="text_box" data-aos="fade-left">
               <h3>
                 Virtual <br />
                 Companion
               </h3>
               <p>
-                Is your personal assistant, nutritionist, caretaker, and friend!
-                Always by your side 24/7
+                Is your personal assistant, nutritionist, caretaker, and friend! Always by your side
+                24/7
               </p>
             </div>
           </div>
@@ -115,19 +103,14 @@
                 allowfullscreen
                 id="video1"
               ></iframe>
-              <input
-                type="image"
-                src="./content/assets/img/novoice.svg"
-                class="toggleVoice1"
-              />
+              <input type="image" src="./content/assets/img/novoice.svg" class="toggleVoice1" />
             </div>
             <div class="text_box" data-aos="fade-down">
               <h3>Customization</h3>
               <p>
-                Virtual companions have a personality of their own. Their
-                behavior and attitude change depending on the interactions you
-                have with them. “being nice and being unfriendly can both be a
-                benefit and drawback.”
+                Virtual companions have a personality of their own. Their behavior and attitude
+                change depending on the interactions you have with them. “being nice and being
+                unfriendly can both be a benefit and drawback.”
               </p>
             </div>
           </div>
@@ -149,12 +132,10 @@
               allowfullscreen
             ></iframe>
           </div>
-          <h2>
-            Breakdown <br /><span> the boundaries of <br / >reality.</span>
-          </h2>
+          <h2>Breakdown <br /><span> the boundaries of <br / >reality.</span></h2>
           <p>
-            Join and interact face-to-face with virtual companions in real-time
-            at events, from anywhere around the world.
+            Join and interact face-to-face with virtual companions in real-time at events, from
+            anywhere around the world.
           </p>
         </div>
         <svg
@@ -292,8 +273,8 @@
         <h3>NEWS!</h3>
         <p>2022.10.21</p>
         <p>
-          Chat with your virtual companion, dress them up or listen to music
-          together. With every interaction, they learn...
+          Chat with your virtual companion, dress them up or listen to music together. With every
+          interaction, they learn...
         </p>
         <div class="links">
           <a href="" target="_blank" rel="noreferrer noopener">
@@ -322,32 +303,32 @@
     AOS.init({ duration: 1200, once: true });
 
     $(document).ready(function () {
-      $(".btn_close").on("click", function () {
-        $(this).parents(".fixed_news").remove();
+      $('.btn_close').on('click', function () {
+        $(this).parents('.fixed_news').remove();
       });
       // 輪播區塊
-      let oMain = document.querySelector(".carousel_main");
-      let oUl = oMain.getElementsByTagName("ul")[0];
-      let aLi = oUl.getElementsByTagName("li");
+      let oMain = document.querySelector('.carousel_main');
+      let oUl = oMain.getElementsByTagName('ul')[0];
+      let aLi = oUl.getElementsByTagName('li');
       let speed = 4;
       oUl.innerHTML = oUl.innerHTML + oUl.innerHTML;
-      oUl.style.width = aLi[0].offsetWidth * aLi.length + "px";
+      oUl.style.width = aLi[0].offsetWidth * aLi.length + 'px';
       function move() {
         if (oUl.offsetLeft < -oUl.offsetWidth / 2) {
-          oUl.style.left = "0";
+          oUl.style.left = '0';
         }
         if (oUl.offsetLeft > 0) {
-          oUl.style.left = -oUl.offsetWidth / 2 + "px";
+          oUl.style.left = -oUl.offsetWidth / 2 + 'px';
         }
         // "speed" 前面正負號控制方向
-        oUl.style.left = oUl.offsetLeft - speed + "px";
+        oUl.style.left = oUl.offsetLeft - speed + 'px';
       }
       const timer = setInterval(move, 30);
       oMain.onmouseover = function () {
         speed = 6;
       };
       oMain.onmouseout = function () {
-        speed = 3;
+        speed = 4;
       };
     });
   </script>
