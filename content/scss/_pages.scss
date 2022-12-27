@@ -504,6 +504,11 @@ section.companion {
   .content {
     display: none;
     padding: 81px 0px 50%;
+    animation: fadeOut 5s;
+    -webkit-animation: fadeOut 5s;
+    -moz-animation: fadeOut 5s;
+    -o-animation: fadeOut 5s;
+    -ms-animation: fadeOut 5s;
     &-title {
       font-size: $fs_mega;
     }
@@ -527,6 +532,20 @@ section.companion {
   .content.active {
     display: block;
     text-align: center;
+    animation: fadeIn 5s;
+    -webkit-animation: fadeIn 5s;
+    -moz-animation: fadeIn 5s;
+    -o-animation: fadeIn 5s;
+    -ms-animation: fadeIn 5s;
+  }
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+    @keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
   }
 }
 
