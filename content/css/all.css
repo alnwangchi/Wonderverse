@@ -339,7 +339,7 @@ header {
       -ms-flex-align: center;
           align-items: center;
   padding: 20px 80px;
-  z-index: 2;
+  z-index: 3;
 }
 @media (max-width: 1199.98px) {
   header {
@@ -679,7 +679,7 @@ section.index > .video_box > div > input {
 }
 section.index > .video_box.breakdown {
   margin-top: 85vh;
-  margin-bottom: 60vh;
+  margin-bottom: 40vh;
   overflow: unset;
   width: 100%;
   aspect-ratio: 16/9;
@@ -690,19 +690,30 @@ section.index > .video_box.breakdown {
 @media (max-width: 575.98px) {
   section.index > .video_box.breakdown {
     aspect-ratio: 1/1.6;
-  }
-}
-@media (max-width: 575.98px) {
-  section.index > .video_box.breakdown {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 16px;
     margin-top: 35vh;
-    margin-bottom: 85vh;
+    margin-bottom: 20vh;
   }
 }
 section.index > .video_box.breakdown div {
   bottom: unset;
   top: 50%;
 }
-section.index > .video_box.breakdown div iframe {
+@media (max-width: 575.98px) {
+  section.index > .video_box.breakdown div {
+    top: unset;
+    position: relative;
+  }
+}
+section.index > .video_box.breakdown div iframe,
+section.index > .video_box.breakdown div video {
   position: absolute;
   top: 50%;
   left: 10%;
@@ -714,12 +725,14 @@ section.index > .video_box.breakdown div iframe {
   background-color: #ccc;
 }
 @media (max-width: 575.98px) {
-  section.index > .video_box.breakdown div iframe {
+  section.index > .video_box.breakdown div iframe,
+section.index > .video_box.breakdown div video {
+    position: relative;
     top: unset;
-    bottom: -50%;
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
+    max-width: 87.5%;
   }
 }
 section.index > .video_box.breakdown h2 {
@@ -752,8 +765,9 @@ section.index > .video_box.breakdown p {
 }
 @media (max-width: 575.98px) {
   section.index > .video_box.breakdown p {
+    position: relative;
     width: 87%;
-    bottom: -95%;
+    bottom: unset;
     min-width: unset;
     left: 50%;
     -webkit-transform: translateX(-50%);
@@ -894,7 +908,8 @@ section.index .container .content .video_box {
     margin-bottom: 16px;
   }
 }
-section.index .container .content .video_box iframe {
+section.index .container .content .video_box iframe,
+section.index .container .content .video_box video {
   overflow: hidden;
   padding-bottom: 4px;
   width: 100%;

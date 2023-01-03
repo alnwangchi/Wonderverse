@@ -30,23 +30,29 @@ section.index {
     // 最下方兩部影片重疊處
     &.breakdown {
       margin-top: 85vh;
-      margin-bottom: 60vh;
+      margin-bottom: 40vh;
       overflow: unset;
       width: 100%;
       aspect-ratio: 16 / 9;
       display: flex;
       @include sm {
         aspect-ratio: 1 / 1.6;
-      }
-      @include sm {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
         margin-top: 35vh;
-        margin-bottom: 85vh;
+        margin-bottom: 20vh;
       }
       $commonleft: 37.5%;
       div {
         bottom: unset;
         top: 50%;
-        iframe {
+        @include sm {
+          top: unset;
+          position: relative;
+        }
+        iframe,
+        video {
           position: absolute;
           top: 50%;
           left: 10%;
@@ -54,10 +60,11 @@ section.index {
           border: 1px solid #f00;
           @include occupation;
           @include sm {
+            position: relative;
             top: unset;
-            bottom: -50%;
             left: 50%;
             transform: translateX(-50%);
+            max-width: 87.5%;
           }
         }
       }
@@ -84,8 +91,9 @@ section.index {
         font-size: $fs_h3;
         min-width: 840px;
         @include sm {
+          position: relative;
           width: 87%;
-          bottom: -95%;
+          bottom: unset;
           min-width: unset;
           left: 50%;
           transform: translateX(-50%);
@@ -189,7 +197,8 @@ section.index {
           margin: unset;
           margin-bottom: 16px;
         }
-        iframe {
+        iframe,
+        video {
           overflow: hidden;
           padding-bottom: 4px;
           @include iframeSize;
