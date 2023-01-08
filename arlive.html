@@ -5,11 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ARLive</title>
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="./content/assets/img/favicon.png"
-    />
+    <link rel="shortcut icon" type="image/x-icon" href="./content/assets/img/favicon.png" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="./content/css/all.min.css" />
   </head>
@@ -48,31 +44,25 @@
           </nav>
         </div>
       </header>
+      <!-- arlive 主內容 -->
       <section class="arlive">
         <div class="container">
           <h2>Virtual Companions</h2>
           <div class="video_box">
-            <iframe
-              src="https://www.youtube.com/embed/OBH26hA6GLA?enablejsapi=1&controls=0&loop=1&playsinline=1"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              id="video"
-            ></iframe>
+            <video id="arliveV1" muted autoplay>
+              <source src="https://d3f1ft2cgx5qd2.cloudfront.net/testf.mp4" type="video/mp4" />
+            </video>
           </div>
           <div class="toggleBox">
-            <input
-              type="image"
-              src="./content/assets/img/novoice.svg"
-              class="toggleVoice"
-            />
+            <input type="image" src="./content/assets/img/novoice.svg" class="toggleVoice arlive" />
           </div>
+          <!-- 大文字 -->
           <h2 data-aos="fade-left">Brining</h2>
           <h2 data-aos="fade-left" data-aos-delay="100">Virtual</h2>
           <h2 data-aos="fade-left" data-aos-delay="200">Companions</h2>
           <h2 data-aos="fade-left" data-aos-delay="300">to Life</h2>
         </div>
+        <!-- 背景定位素材 -->
         <svg
           class="polygon polygon_left"
           width="215"

@@ -1,5 +1,4 @@
 section {
-  // TBC
   padding-top: 0;
 }
 
@@ -7,14 +6,9 @@ section.index {
   & > .video_box {
     position: relative;
     width: 100%;
-    aspect-ratio: 2 / 1;
-    @include md {
-      aspect-ratio: 1.2 / 1;
-    }
-    @include sm {
-      aspect-ratio: 0.6 / 1;
-    }
-    & > iframe {
+    height: 100vh;
+    & > iframe,
+    video {
       overflow: hidden;
       @include iframeSize;
     }
@@ -24,7 +18,7 @@ section.index {
       bottom: 0;
       width: 100%;
       & > input {
-        padding: 20px 80px;
+        margin: 20px 6.25%;
       }
     }
     // 最下方兩部影片重疊處
@@ -45,20 +39,19 @@ section.index {
       }
       $commonleft: 37.5%;
       div {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        transform: translateY(-50%);
+        @include occupation;
         bottom: unset;
         top: 50%;
         @include sm {
           top: unset;
           position: relative;
         }
-        iframe,
-        video {
-          position: absolute;
-          top: 50%;
-          left: 10%;
-          transform: translateY(-50%);
-          border: 1px solid #f00;
-          @include occupation;
+        #indexV4 {
+          object-fit: cover;
           @include sm {
             position: relative;
             top: unset;
@@ -228,7 +221,8 @@ section.social {
         margin: unset;
         margin-bottom: 16px;
       }
-      iframe {
+      iframe,
+      video {
         overflow: hidden;
         padding-bottom: 4px;
         @include iframeSize;
@@ -424,6 +418,13 @@ section.companion {
         flex-wrap: wrap;
         padding: 2px 20px 2px 20px;
       }
+      @include xs {
+        transform: scale(0.95);
+        img {
+          display: none;
+        }
+        // display: none;
+      }
     }
     &-btn {
       font-size: $fs_h6;
@@ -439,6 +440,9 @@ section.companion {
       gap: 10px;
       &:hover {
         cursor: url('../assets/img/logo.svg'), auto;
+      }
+      @include sm {
+        font-size: $fs_milli;
       }
     }
 
@@ -505,9 +509,6 @@ section.companion {
       @include lg {
         width: 95px;
       }
-      @include sm {
-        width: 100px;
-      }
     }
   }
   .content {
@@ -521,13 +522,14 @@ section.companion {
     &-title {
       font-size: $fs_mega;
     }
-    .video_box {
+    .box {
       max-width: 522px;
       width: 100%;
       aspect-ratio: 16/9;
       margin: 0 auto;
-      iframe {
-        @include iframeSize;
+      img {
+        width: 100%;
+        object-fit: cover;
       }
     }
     p {
@@ -548,13 +550,21 @@ section.companion {
     -ms-animation: fadeIn 5s;
   }
   @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 
-    @keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
   }
 }
 
@@ -630,115 +640,122 @@ section.character {
         background: rgba($clr_base, 0.8);
         border-radius: 20px;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      }
-      .tab-content {
-        padding: 30px;
-        .title-row {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-bottom: 30px;
-          @include md {
-            flex-direction: column;
-            align-items: flex-start;
-          }
-          .logo {
-            width: 30px;
-            height: 30px;
-            margin: 0 7px;
-          }
-          .title-right {
+        .tab-content {
+          padding: 30px;
+          .title-row {
             display: flex;
             align-items: center;
-            span {
-              color: $clr_7;
-              font-size: $fs_h5;
-              &.gradient {
-                font-weight: $fw_bolder;
-                background: linear-gradient(92.09deg, $clr_5 0.54%, $clr_1 43.02%, $clr_4 101.24%);
-                background-clip: text;
-                color: transparent;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            @include md {
+              flex-direction: column;
+              align-items: flex-start;
+            }
+            .logo {
+              width: 30px;
+              height: 30px;
+              margin: 0 7px;
+            }
+            .title-right {
+              display: flex;
+              align-items: center;
+              span {
+                color: $clr_7;
+                font-size: $fs_h5;
+                &.gradient {
+                  font-weight: $fw_bolder;
+                  background: linear-gradient(
+                    92.09deg,
+                    $clr_5 0.54%,
+                    $clr_1 43.02%,
+                    $clr_4 101.24%
+                  );
+                  background-clip: text;
+                  color: transparent;
+                }
               }
             }
           }
-        }
-        .title {
-          font-family: $ff_alt1;
-          font-size: 54px !important;
-          color: $clr_6 !important;
-        }
-        .list {
-          margin-left: 15px;
-          span {
+          .title {
             font-family: $ff_alt1;
-            color: $clr_6;
-            line-height: 23px;
-            display: inline-block;
-            min-width: 200px;
-            @include md {
-              min-width: 130px;
-            }
+            font-size: 54px !important;
+            color: $clr_6 !important;
           }
-          li {
-            &::marker {
-              content: '✦ ';
+          .list {
+            margin-left: 15px;
+            span {
+              font-family: $ff_alt1;
               color: $clr_6;
+              line-height: 23px;
+              display: inline-block;
+              min-width: 200px;
+              @include md {
+                min-width: 130px;
+              }
+            }
+            li {
+              &::marker {
+                content: '✦ ';
+                color: $clr_6;
+              }
             }
           }
-        }
-        .description {
-          margin-bottom: 30px;
-          p {
-            margin-top: 30px;
-            line-height: 25px;
-            font-weight: $fw_bolder;
-            font-size: $fs_h6;
-            color: $clr_8;
+          .description {
+            margin-bottom: 30px;
+            p {
+              margin-top: 30px;
+              line-height: 25px;
+              font-weight: $fw_bolder;
+              font-size: $fs_h6;
+              color: $clr_8;
+            }
           }
-        }
-        .chat-button {
-          position: relative;
-          left: 0;
-          right: 0;
-          margin: auto;
-          margin-bottom: 30px;
-          min-width: 420px;
-          height: 60px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border-radius: 20px;
-          border: 2px solid $clr_1;
-          background: transparent;
-          @include md {
-            min-width: 100%;
+          .chat-button {
+            position: relative;
+            left: 0;
+            right: 0;
+            margin: auto;
+            margin-bottom: 30px;
+            min-width: 420px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            border: 2px solid $clr_1;
+            background: transparent;
+            @include md {
+              min-width: 100%;
+            }
+            img {
+              width: 18px;
+              height: 18px;
+              margin-right: 18px;
+            }
+            p {
+              color: $clr_1;
+              font-family: $ff_alt1;
+            }
           }
-          img {
-            width: 18px;
-            height: 18px;
-            margin-right: 18px;
-          }
-          p {
-            color: $clr_1;
-            font-family: $ff_alt1;
-          }
-        }
-        .vedio-box {
-          width: 100%;
-          max-width: 640px;
-          aspect-ratio: 16 / 9;
-          border-radius: 15px;
-          @include md {
-            margin: unset;
-            margin-bottom: 16px;
-          }
-          iframe {
-            overflow: hidden;
-            padding-bottom: 4px;
-            @include iframeSize;
-          }
-          > input {
-            filter: brightness(0);
+          .video_box {
+            width: 100%;
+            max-width: 640px;
+            aspect-ratio: 16 / 9;
+            border-radius: 15px;
+            @include md {
+              margin: unset;
+              margin-bottom: 16px;
+            }
+            iframe,
+            video {
+              object-fit: cover;
+              overflow: hidden;
+              padding-bottom: 4px;
+              @include iframeSize;
+            }
+            & > input {
+              filter: brightness(0);
+            }
           }
         }
       }
@@ -749,6 +766,7 @@ section.character {
 .polygon {
   position: absolute;
   width: 20%;
+  z-index: -1;
   &_left {
     opacity: 0.5;
     top: 43%;
